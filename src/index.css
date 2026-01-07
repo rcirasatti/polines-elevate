@@ -1,96 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Polines Brand Colors */
+    --background: 210 20% 98%;
+    --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Polines Maroon */
+    --primary: 0 100% 25%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Noble Gold */
+    --secondary: 43 76% 52%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 43 76% 52%;
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 0 100% 25%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
+    /* Custom Polines Variables */
+    --maroon: 0 100% 25%;
+    --maroon-light: 0 70% 35%;
+    --maroon-dark: 0 100% 18%;
+    --gold: 43 76% 52%;
+    --gold-light: 43 76% 65%;
+    --gold-dark: 43 76% 42%;
+    
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 100% / 0.3;
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
+    --sidebar-primary: 0 100% 25%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 43 76% 95%;
+    --sidebar-accent-foreground: 0 100% 25%;
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 0 100% 25%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 100% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 43 76% 52%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 43 76% 52%;
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 100% 35%;
+
+    --maroon: 0 100% 35%;
+    --maroon-light: 0 70% 45%;
+    --maroon-dark: 0 100% 25%;
+    --gold: 43 76% 55%;
+    --gold-light: 43 76% 68%;
+    --gold-dark: 43 76% 45%;
+
+    --glass-bg: 0 0% 15% / 0.7;
+    --glass-border: 0 0% 25% / 0.3;
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 100% 35%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 0 100% 35%;
   }
 }
 
@@ -99,7 +118,200 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins antialiased;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card */
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/30 shadow-lg;
+  }
+
+  .glass-nav {
+    @apply bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-sm;
+  }
+
+  /* Gradient Backgrounds */
+  .gradient-maroon {
+    @apply bg-gradient-to-br from-primary via-[hsl(var(--maroon-light))] to-primary;
+  }
+
+  .gradient-gold {
+    @apply bg-gradient-to-r from-secondary to-[hsl(var(--gold-light))];
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, 
+      hsl(var(--maroon)) 0%, 
+      hsl(var(--maroon-dark)) 50%,
+      hsl(0 100% 20%) 100%
+    );
+  }
+
+  /* Text Gradients */
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-secondary to-[hsl(var(--gold-light))] bg-clip-text text-transparent;
+  }
+
+  /* Hover Card Effect */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  }
+
+  /* Section Container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Department Card Styles */
+  .dept-card {
+    @apply relative overflow-hidden rounded-2xl p-6 transition-all duration-500;
+    @apply bg-white/80 backdrop-blur-sm border border-white/30;
+    @apply hover:shadow-2xl hover:-translate-y-2;
+  }
+
+  .dept-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: linear-gradient(135deg, hsl(var(--maroon) / 0.05), hsl(var(--gold) / 0.1));
+  }
+
+  .dept-card:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Stats Counter Animation */
+  .stat-number {
+    @apply text-5xl md:text-6xl font-bold;
+    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-light)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* News Card */
+  .news-card {
+    @apply relative overflow-hidden rounded-xl bg-card transition-all duration-300;
+    @apply hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .news-card-image {
+    @apply w-full h-48 object-cover transition-transform duration-500;
+    @apply group-hover:scale-110;
+  }
+
+  /* Mega Menu */
+  .mega-menu {
+    @apply absolute left-0 right-0 top-full bg-white/95 backdrop-blur-xl;
+    @apply border-t border-border shadow-2xl opacity-0 invisible;
+    @apply transition-all duration-300 translate-y-2;
+  }
+
+  .mega-menu.active {
+    @apply opacity-100 visible translate-y-0;
+  }
+
+  /* CTA Button Styles */
+  .btn-primary-hero {
+    @apply px-8 py-4 rounded-full font-semibold text-lg;
+    @apply bg-gradient-to-r from-secondary to-[hsl(var(--gold-light))];
+    @apply text-primary-foreground shadow-lg;
+    @apply transition-all duration-300 hover:shadow-xl hover:scale-105;
+    @apply hover:from-[hsl(var(--gold-light))] hover:to-secondary;
+    color: hsl(var(--maroon-dark));
+  }
+
+  .btn-secondary-hero {
+    @apply px-8 py-4 rounded-full font-semibold text-lg;
+    @apply border-2 border-white/80 text-white bg-white/10;
+    @apply backdrop-blur-sm transition-all duration-300;
+    @apply hover:bg-white hover:text-primary;
+  }
+
+  /* Trust Bar Logo */
+  .partner-logo {
+    @apply h-12 w-auto grayscale opacity-60 transition-all duration-300;
+    @apply hover:grayscale-0 hover:opacity-100;
+  }
+
+  /* Testimonial Card */
+  .testimonial-card {
+    @apply p-8 rounded-2xl bg-white shadow-lg border border-border/50;
+    @apply transition-all duration-300 hover:shadow-xl;
+  }
+
+  /* Footer Link */
+  .footer-link {
+    @apply text-muted-foreground transition-colors duration-200;
+    @apply hover:text-secondary;
+  }
+
+  /* Sticky CTA Mobile */
+  .sticky-cta {
+    @apply fixed bottom-4 left-4 right-4 z-50 md:hidden;
+    @apply flex gap-2;
+  }
+
+  .sticky-cta button {
+    @apply flex-1 py-4 rounded-full font-semibold shadow-lg;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-counter {
+    animation: counter 2s ease-out forwards;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes counter {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
   }
 }
