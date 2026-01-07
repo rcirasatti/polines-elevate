@@ -9,6 +9,7 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { InnovationSection } from "@/components/sections/InnovationSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { StickyCTA } from "@/components/shared/StickyCTA";
+import { AIAssistant } from "@/components/shared/AIAssistant";
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
 
       <Footer />
       <StickyCTA />
+      <AIAssistant />
     </div>
   );
 };
