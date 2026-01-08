@@ -60,10 +60,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        maroon: {
-          DEFAULT: "hsl(var(--maroon))",
-          light: "hsl(var(--maroon-light))",
-          dark: "hsl(var(--maroon-dark))",
+        "polines-blue": {
+          DEFAULT: "hsl(var(--polines-blue))",
+          light: "hsl(var(--polines-blue-light))",
+          dark: "hsl(var(--polines-blue-dark))",
         },
         gold: {
           DEFAULT: "hsl(var(--gold))",
@@ -122,13 +122,13 @@ export default {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "hero-gradient": "linear-gradient(135deg, hsl(var(--maroon)) 0%, hsl(var(--maroon-dark)) 100%)",
+        "hero-gradient": "linear-gradient(135deg, hsl(var(--polines-blue)) 0%, hsl(var(--polines-blue-dark)) 100%)",
         "gold-gradient": "linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-light)) 100%)",
       },
       boxShadow: {
         "glass": "0 8px 32px 0 rgba(0, 0, 0, 0.1)",
         "gold": "0 4px 20px hsl(var(--gold) / 0.3)",
-        "maroon": "0 4px 20px hsl(var(--maroon) / 0.3)",
+        "blue": "0 4px 20px hsl(var(--polines-blue) / 0.3)",
       },
     },
   },

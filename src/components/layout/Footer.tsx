@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
   MapPin, Phone, Mail, Clock, 
@@ -6,30 +7,30 @@ import {
 } from "lucide-react";
 
 const quickLinks = [
-  { title: "Tentang Polines", href: "#" },
-  { title: "Penerimaan Mahasiswa Baru", href: "#" },
-  { title: "Kalender Akademik", href: "#" },
-  { title: "Beasiswa", href: "#" },
-  { title: "Tracer Study", href: "#" },
-  { title: "Karir & Lowongan", href: "#" },
+  { title: "Tentang Polines", href: "/profil/sejarah" },
+  { title: "Penerimaan Mahasiswa Baru", href: "/penerimaan" },
+  { title: "Kalender Akademik", href: "/akademik/kalender" },
+  { title: "Beasiswa", href: "/akademik/beasiswa" },
+  { title: "Tracer Study", href: "/kerjasama/tracer-study" },
+  { title: "Karir & Lowongan", href: "/kerjasama/cdc" },
 ];
 
 const academicLinks = [
-  { title: "Jurusan Teknik Sipil", href: "#" },
-  { title: "Jurusan Teknik Mesin", href: "#" },
-  { title: "Jurusan Teknik Elektro", href: "#" },
-  { title: "Jurusan Akuntansi", href: "#" },
-  { title: "Jurusan Administrasi Bisnis", href: "#" },
-  { title: "Pascasarjana", href: "#" },
+  { title: "Jurusan Teknik Sipil", href: "/akademik/jurusan/teknik-sipil" },
+  { title: "Jurusan Teknik Mesin", href: "/akademik/jurusan/teknik-mesin" },
+  { title: "Jurusan Teknik Elektro", href: "/akademik/jurusan/teknik-elektro" },
+  { title: "Jurusan Akuntansi", href: "/akademik/jurusan/akuntansi" },
+  { title: "Jurusan Administrasi Bisnis", href: "/akademik/jurusan/administrasi-bisnis" },
+  { title: "Program Studi", href: "/akademik/program-studi" },
 ];
 
 const serviceLinks = [
-  { title: "SIAKAD", href: "#", external: true },
-  { title: "E-Learning (LMS)", href: "#", external: true },
-  { title: "Webmail", href: "#", external: true },
-  { title: "Perpustakaan", href: "#", external: true },
-  { title: "Repository", href: "#", external: true },
-  { title: "PPID", href: "#", external: true },
+  { title: "SIAKAD", href: "https://siakad.polines.ac.id", external: true },
+  { title: "E-Learning (LMS)", href: "https://lms.polines.ac.id", external: true },
+  { title: "Webmail", href: "https://mail.polines.ac.id", external: true },
+  { title: "Perpustakaan", href: "https://lib.polines.ac.id", external: true },
+  { title: "Repository", href: "https://repository.polines.ac.id", external: true },
+  { title: "PPID", href: "/layanan/ppid", external: false },
 ];
 
 const socialLinks = [
@@ -96,13 +97,13 @@ export function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.title}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-white/70 hover:text-secondary transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span className="w-1.5 h-1.5 bg-secondary/50 rounded-full group-hover:bg-secondary transition-colors" />
                     {link.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -122,13 +123,13 @@ export function Footer() {
             <ul className="space-y-3">
               {academicLinks.map((link) => (
                 <li key={link.title}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-white/70 hover:text-secondary transition-colors text-sm flex items-center gap-2 group"
                   >
                     <span className="w-1.5 h-1.5 bg-secondary/50 rounded-full group-hover:bg-secondary transition-colors" />
                     {link.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -181,14 +182,26 @@ export function Footer() {
               <h5 className="font-semibold text-sm mb-3">Layanan Digital</h5>
               <div className="flex flex-wrap gap-2">
                 {serviceLinks.map((link) => (
-                  <a
-                    key={link.title}
-                    href={link.href}
-                    className="inline-flex items-center gap-1 px-3 py-1 bg-white/10 rounded-full text-xs hover:bg-secondary hover:text-secondary-foreground transition-colors"
-                  >
-                    {link.title}
-                    {link.external && <ExternalLink className="w-3 h-3" />}
-                  </a>
+                  link.external ? (
+                    <a
+                      key={link.title}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 px-3 py-1 bg-white/10 rounded-full text-xs hover:bg-secondary hover:text-secondary-foreground transition-colors"
+                    >
+                      {link.title}
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.title}
+                      to={link.href}
+                      className="inline-flex items-center gap-1 px-3 py-1 bg-white/10 rounded-full text-xs hover:bg-secondary hover:text-secondary-foreground transition-colors"
+                    >
+                      {link.title}
+                    </Link>
+                  )
                 ))}
               </div>
             </div>
@@ -204,15 +217,15 @@ export function Footer() {
               © {new Date().getFullYear()} Politeknik Negeri Semarang. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <a href="#" className="text-sm text-white/60 hover:text-secondary transition-colors">
+              <Link to="/kebijakan-privasi" className="text-sm text-white/60 hover:text-secondary transition-colors">
                 Kebijakan Privasi
-              </a>
-              <a href="#" className="text-sm text-white/60 hover:text-secondary transition-colors">
+              </Link>
+              <Link to="/syarat-ketentuan" className="text-sm text-white/60 hover:text-secondary transition-colors">
                 Syarat & Ketentuan
-              </a>
-              <a href="#" className="text-sm text-white/60 hover:text-secondary transition-colors">
+              </Link>
+              <Link to="/peta-situs" className="text-sm text-white/60 hover:text-secondary transition-colors">
                 Peta Situs
-              </a>
+              </Link>
             </div>
           </div>
         </div>
