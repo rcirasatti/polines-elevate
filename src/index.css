@@ -6,46 +6,46 @@
 
 @layer base {
   :root {
-    /* Polines Brand Colors */
+    /* Polines Brand Colors - Updated */
     --background: 210 20% 98%;
-    --foreground: 0 0% 10%;
+    --foreground: 210 40% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 210 40% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 210 40% 10%;
 
-    /* Polines Maroon */
-    --primary: 0 100% 25%;
+    /* Primary: Deep Blue #155CB3 = hsl(210, 80%, 39%) */
+    --primary: 210 80% 39%;
     --primary-foreground: 0 0% 100%;
 
-    /* Noble Gold */
-    --secondary: 43 76% 52%;
-    --secondary-foreground: 0 0% 10%;
+    /* Secondary: Polines Gold #F8C300 = hsl(47, 100%, 49%) */
+    --secondary: 47 100% 49%;
+    --secondary-foreground: 210 40% 10%;
 
     --muted: 210 20% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted-foreground: 210 16% 47%;
 
-    --accent: 43 76% 52%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 47 100% 49%;
+    --accent-foreground: 210 40% 10%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 0 100% 25%;
+    --ring: 210 80% 39%;
 
     --radius: 0.75rem;
 
     /* Custom Polines Variables */
-    --maroon: 0 100% 25%;
-    --maroon-light: 0 70% 35%;
-    --maroon-dark: 0 100% 18%;
-    --gold: 43 76% 52%;
-    --gold-light: 43 76% 65%;
-    --gold-dark: 43 76% 42%;
+    --polines-blue: 210 80% 39%;
+    --polines-blue-light: 210 70% 50%;
+    --polines-blue-dark: 210 90% 30%;
+    --gold: 47 100% 49%;
+    --gold-light: 47 100% 60%;
+    --gold-dark: 47 100% 40%;
     
     /* Glassmorphism */
     --glass-bg: 0 0% 100% / 0.7;
@@ -54,62 +54,62 @@
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 0 100% 25%;
+    --sidebar-foreground: 210 40% 26%;
+    --sidebar-primary: 210 80% 39%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 43 76% 95%;
-    --sidebar-accent-foreground: 0 100% 25%;
+    --sidebar-accent: 47 100% 95%;
+    --sidebar-accent-foreground: 210 80% 39%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 0 100% 25%;
+    --sidebar-ring: 210 80% 39%;
   }
 
   .dark {
-    --background: 0 0% 8%;
+    --background: 210 20% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 12%;
+    --card: 210 20% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 12%;
+    --popover: 210 20% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 100% 35%;
+    --primary: 210 80% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 43 76% 52%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 47 100% 52%;
+    --secondary-foreground: 210 40% 10%;
 
-    --muted: 0 0% 15%;
+    --muted: 210 20% 15%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 43 76% 52%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 47 100% 52%;
+    --accent-foreground: 210 40% 10%;
 
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 0 100% 35%;
+    --border: 210 20% 18%;
+    --input: 210 20% 18%;
+    --ring: 210 80% 50%;
 
-    --maroon: 0 100% 35%;
-    --maroon-light: 0 70% 45%;
-    --maroon-dark: 0 100% 25%;
-    --gold: 43 76% 55%;
-    --gold-light: 43 76% 68%;
-    --gold-dark: 43 76% 45%;
+    --polines-blue: 210 80% 50%;
+    --polines-blue-light: 210 70% 60%;
+    --polines-blue-dark: 210 90% 40%;
+    --gold: 47 100% 55%;
+    --gold-light: 47 100% 65%;
+    --gold-dark: 47 100% 45%;
 
-    --glass-bg: 0 0% 15% / 0.7;
-    --glass-border: 0 0% 25% / 0.3;
+    --glass-bg: 210 20% 15% / 0.7;
+    --glass-border: 210 20% 25% / 0.3;
 
-    --sidebar-background: 0 0% 10%;
+    --sidebar-background: 210 20% 10%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 0 100% 35%;
+    --sidebar-primary: 210 80% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent: 210 20% 15%;
     --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 0 100% 35%;
+    --sidebar-border: 210 20% 18%;
+    --sidebar-ring: 210 80% 50%;
   }
 }
 
@@ -138,8 +138,8 @@
   }
 
   /* Gradient Backgrounds */
-  .gradient-maroon {
-    @apply bg-gradient-to-br from-primary via-[hsl(var(--maroon-light))] to-primary;
+  .gradient-primary {
+    @apply bg-gradient-to-br from-primary via-[hsl(var(--polines-blue-light))] to-primary;
   }
 
   .gradient-gold {
@@ -148,9 +148,9 @@
 
   .gradient-hero {
     background: linear-gradient(135deg, 
-      hsl(var(--maroon)) 0%, 
-      hsl(var(--maroon-dark)) 50%,
-      hsl(0 100% 20%) 100%
+      hsl(var(--polines-blue)) 0%, 
+      hsl(var(--polines-blue-dark)) 50%,
+      hsl(210 90% 25%) 100%
     );
   }
 
@@ -189,7 +189,7 @@
   /* Stats Counter Animation */
   .stat-number {
     @apply text-5xl md:text-6xl font-bold;
-    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-light)) 100%);
+    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--gold-light)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -221,10 +221,10 @@
   .btn-primary-hero {
     @apply px-8 py-4 rounded-full font-semibold text-lg;
     @apply bg-gradient-to-r from-secondary to-[hsl(var(--gold-light))];
-    @apply text-primary-foreground shadow-lg;
+    @apply shadow-lg;
     @apply transition-all duration-300 hover:shadow-xl hover:scale-105;
     @apply hover:from-[hsl(var(--gold-light))] hover:to-secondary;
-    color: hsl(var(--maroon-dark));
+    color: hsl(var(--polines-blue-dark));
   }
 
   .btn-secondary-hero {

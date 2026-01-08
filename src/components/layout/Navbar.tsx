@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Menu, X, Search, ChevronDown, ExternalLink,
@@ -13,67 +14,68 @@ const menuItems = [
     title: "Profil",
     icon: Building2,
     submenu: [
-      { title: "Sejarah", href: "#" },
-      { title: "Visi & Misi", href: "#" },
-      { title: "Struktur Organisasi", href: "#" },
-      { title: "Direktur & Manajemen", href: "#" },
-      { title: "Akreditasi Institusi", href: "#" },
-      { title: "Fasilitas Kampus", href: "#" },
-      { title: "Peta Kampus", href: "#" },
+      { title: "Sejarah", href: "/profil/sejarah" },
+      { title: "Visi & Misi", href: "/profil/visi-misi" },
+      { title: "Struktur Organisasi", href: "/profil/struktur" },
+      { title: "Direktur & Manajemen", href: "/profil/direktur" },
+      { title: "Akreditasi Institusi", href: "/profil/akreditasi" },
+      { title: "Fasilitas Kampus", href: "/profil/fasilitas" },
+      { title: "Peta Kampus", href: "/profil/peta" },
     ],
   },
   {
     title: "Akademik",
     icon: GraduationCap,
     submenu: [
-      { title: "Jurusan Teknik Sipil", href: "#" },
-      { title: "Jurusan Teknik Mesin", href: "#" },
-      { title: "Jurusan Teknik Elektro", href: "#" },
-      { title: "Jurusan Akuntansi", href: "#" },
-      { title: "Jurusan Administrasi Bisnis", href: "#" },
-      { title: "Kalender Akademik", href: "#" },
-      { title: "Peraturan Akademik", href: "#" },
+      { title: "Program Studi", href: "/akademik/program-studi" },
+      { title: "Jurusan Teknik Sipil", href: "/akademik/jurusan/teknik-sipil" },
+      { title: "Jurusan Teknik Mesin", href: "/akademik/jurusan/teknik-mesin" },
+      { title: "Jurusan Teknik Elektro", href: "/akademik/jurusan/teknik-elektro" },
+      { title: "Jurusan Akuntansi", href: "/akademik/jurusan/akuntansi" },
+      { title: "Jurusan Administrasi Bisnis", href: "/akademik/jurusan/administrasi-bisnis" },
+      { title: "Kalender Akademik", href: "/akademik/kalender" },
+      { title: "Beasiswa", href: "/akademik/beasiswa" },
     ],
   },
   {
     title: "Riset & Inovasi",
     icon: FlaskConical,
     submenu: [
-      { title: "Pusat Penelitian (P3M)", href: "#" },
-      { title: "Jurnal SIPMAS", href: "#" },
-      { title: "Produk Inovasi", href: "#" },
-      { title: "HAKI & Paten", href: "#" },
+      { title: "Pusat Penelitian (P3M)", href: "/riset/p3m" },
+      { title: "Jurnal SIPMAS", href: "/riset/jurnal" },
+      { title: "Produk Inovasi", href: "/riset/produk" },
+      { title: "HAKI & Paten", href: "/riset/haki" },
     ],
   },
   {
     title: "Kemahasiswaan",
     icon: Users,
     submenu: [
-      { title: "Organisasi Mahasiswa", href: "#" },
-      { title: "Unit Kegiatan Mahasiswa", href: "#" },
-      { title: "Prestasi Mahasiswa", href: "#" },
-      { title: "Beasiswa", href: "#" },
+      { title: "Organisasi Mahasiswa", href: "/kemahasiswaan/ormawa" },
+      { title: "Unit Kegiatan Mahasiswa", href: "/kemahasiswaan/ukm" },
+      { title: "Prestasi Mahasiswa", href: "/kemahasiswaan/prestasi" },
+      { title: "Layanan Mahasiswa", href: "/kemahasiswaan/layanan" },
     ],
   },
   {
     title: "Kerjasama",
     icon: Briefcase,
     submenu: [
-      { title: "Hubungan Industri", href: "#" },
-      { title: "Kerjasama Internasional", href: "#" },
-      { title: "Career Development Center", href: "#" },
-      { title: "Tracer Study", href: "#" },
-      { title: "Ikatan Alumni", href: "#" },
+      { title: "Hubungan Industri", href: "/kerjasama/industri" },
+      { title: "Kerjasama Internasional", href: "/kerjasama/internasional" },
+      { title: "Career Development Center", href: "/kerjasama/cdc" },
+      { title: "Tracer Study", href: "/kerjasama/tracer-study" },
+      { title: "Ikatan Alumni", href: "/kerjasama/alumni" },
     ],
   },
 ];
 
 const utilityLinks = [
-  { title: "SIAKAD", href: "#" },
-  { title: "LMS", href: "#" },
-  { title: "Webmail", href: "#" },
-  { title: "Perpustakaan", href: "#" },
-  { title: "PPID", href: "#" },
+  { title: "SIAKAD", href: "https://siakad.polines.ac.id", external: true },
+  { title: "LMS", href: "https://lms.polines.ac.id", external: true },
+  { title: "Webmail", href: "https://mail.polines.ac.id", external: true },
+  { title: "Perpustakaan", href: "https://lib.polines.ac.id", external: true },
+  { title: "PPID", href: "/layanan/ppid" },
 ];
 
 export function Navbar() {
@@ -83,10 +85,15 @@ export function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,17 +110,33 @@ export function Navbar() {
         <div className="section-container flex items-center justify-between text-sm">
           <div className="flex items-center gap-6">
             {utilityLinks.map((link) => (
-              <a
-                key={link.title}
-                href={link.href}
-                className="flex items-center gap-1 opacity-80 hover:opacity-100 transition-opacity"
-              >
-                <ExternalLink className="w-3 h-3" />
-                {link.title}
-              </a>
+              link.external ? (
+                <a
+                  key={link.title}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 opacity-80 hover:opacity-100 transition-opacity"
+                >
+                  <ExternalLink className="w-3 h-3" />
+                  {link.title}
+                </a>
+              ) : (
+                <Link
+                  key={link.title}
+                  to={link.href}
+                  className="flex items-center gap-1 opacity-80 hover:opacity-100 transition-opacity"
+                >
+                  {link.title}
+                </Link>
+              )
             ))}
           </div>
           <div className="flex items-center gap-4">
+            <Link to="/penerimaan" className="flex items-center gap-1 opacity-80 hover:opacity-100 text-secondary font-semibold">
+              <Award className="w-4 h-4" />
+              PMB 2025
+            </Link>
             <a href="#" className="flex items-center gap-1 opacity-80 hover:opacity-100">
               <Globe className="w-4 h-4" />
               ID | EN
@@ -138,7 +161,7 @@ export function Navbar() {
         <div className="section-container">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="/" className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3">
               <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-xl">P</span>
               </div>
@@ -146,7 +169,7 @@ export function Navbar() {
                 <h1 className="font-bold text-lg text-primary leading-tight">POLINES</h1>
                 <p className="text-xs text-muted-foreground">Politeknik Negeri Semarang</p>
               </div>
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1">
@@ -181,12 +204,12 @@ export function Navbar() {
                           <ul className="space-y-1">
                             {item.submenu.map((subitem) => (
                               <li key={subitem.title}>
-                                <a
-                                  href={subitem.href}
+                                <Link
+                                  to={subitem.href}
                                   className="block px-3 py-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"
                                 >
                                   {subitem.title}
-                                </a>
+                                </Link>
                               </li>
                             ))}
                           </ul>
@@ -224,9 +247,11 @@ export function Navbar() {
               </button>
 
               {/* CTA Button */}
-              <Button variant="gold" className="hidden sm:flex">
-                <Award className="w-4 h-4 mr-1" />
-                Daftar PMB
+              <Button asChild variant="gold" className="hidden sm:flex">
+                <Link to="/penerimaan">
+                  <Award className="w-4 h-4 mr-1" />
+                  Daftar PMB
+                </Link>
               </Button>
 
               {/* Mobile Menu Toggle */}
@@ -282,21 +307,23 @@ export function Navbar() {
                     </div>
                     <div className="ml-7 space-y-1">
                       {item.submenu.map((subitem) => (
-                        <a
+                        <Link
                           key={subitem.title}
-                          href={subitem.href}
+                          to={subitem.href}
                           className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors"
                         >
                           {subitem.title}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
                 ))}
                 <div className="pt-4 border-t border-border">
-                  <Button variant="gold" className="w-full">
-                    <Award className="w-4 h-4 mr-1" />
-                    Daftar PMB
+                  <Button asChild variant="gold" className="w-full">
+                    <Link to="/penerimaan">
+                      <Award className="w-4 h-4 mr-1" />
+                      Daftar PMB
+                    </Link>
                   </Button>
                 </div>
               </div>
