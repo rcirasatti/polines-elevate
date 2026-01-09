@@ -14,6 +14,13 @@ import Beasiswa from "./pages/akademik/Beasiswa";
 // Profil Pages
 import Fasilitas from "./pages/profil/Fasilitas";
 import Sejarah from "./pages/profil/Sejarah";
+import TentangPolines from "./pages/profil/TentangPolines";
+import StrukturOrganisasi from "./pages/profil/StrukturOrganisasi";
+import RencanaStrategis from "./pages/profil/RencanaStrategis";
+import LaporanKinerja from "./pages/profil/LaporanKinerja";
+import FasilitasNew from "./pages/profil/FasilitasNew";
+import SumberDaya from "./pages/profil/SumberDaya";
+import PetaKampus from "./pages/profil/PetaKampus";
 
 // Kerjasama Pages
 import Kerjasama from "./pages/kerjasama/Index";
@@ -37,13 +44,19 @@ const App = () => (
             <Route path="/" element={<Index />} />
             
             {/* Profil Routes */}
+            <Route path="/profil/tentang" element={<TentangPolines />} />
             <Route path="/profil/sejarah" element={<Sejarah />} />
-            <Route path="/profil/fasilitas" element={<Fasilitas />} />
-            <Route path="/profil/visi-misi" element={<GenericPage title="Visi & Misi" breadcrumbs={[{ label: "Profil", href: "/profil/sejarah" }, { label: "Visi & Misi" }]} />} />
-            <Route path="/profil/struktur" element={<GenericPage title="Struktur Organisasi" breadcrumbs={[{ label: "Profil", href: "/profil/sejarah" }, { label: "Struktur Organisasi" }]} />} />
-            <Route path="/profil/direktur" element={<GenericPage title="Direktur & Manajemen" breadcrumbs={[{ label: "Profil", href: "/profil/sejarah" }, { label: "Direktur & Manajemen" }]} />} />
-            <Route path="/profil/akreditasi" element={<GenericPage title="Akreditasi Institusi" breadcrumbs={[{ label: "Profil", href: "/profil/sejarah" }, { label: "Akreditasi" }]} />} />
-            <Route path="/profil/peta" element={<GenericPage title="Peta Kampus" breadcrumbs={[{ label: "Profil", href: "/profil/sejarah" }, { label: "Peta Kampus" }]} />} />
+            <Route path="/profil/struktur-organisasi" element={<StrukturOrganisasi />} />
+            <Route path="/profil/rencana-strategis" element={<RencanaStrategis />} />
+            <Route path="/profil/laporan-kinerja" element={<LaporanKinerja />} />
+            <Route path="/profil/fasilitas" element={<FasilitasNew />} />
+            <Route path="/profil/sumber-daya" element={<SumberDaya />} />
+            <Route path="/profil/peta-kampus" element={<PetaKampus />} />
+            <Route path="/profil/visi-misi" element={<GenericPage title="Visi & Misi" breadcrumbs={[{ label: "Profil", href: "/profil/tentang" }, { label: "Visi & Misi" }]} />} />
+            <Route path="/profil/struktur" element={<StrukturOrganisasi />} />
+            <Route path="/profil/direktur" element={<GenericPage title="Direktur & Manajemen" breadcrumbs={[{ label: "Profil", href: "/profil/tentang" }, { label: "Direktur & Manajemen" }]} />} />
+            <Route path="/profil/akreditasi" element={<GenericPage title="Akreditasi Institusi" breadcrumbs={[{ label: "Profil", href: "/profil/tentang" }, { label: "Akreditasi" }]} />} />
+            <Route path="/profil/peta" element={<PetaKampus />} />
 
             {/* Akademik Routes */}
             <Route path="/akademik" element={<ProgramStudi />} />
