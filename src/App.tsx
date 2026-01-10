@@ -8,8 +8,13 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 // Akademik Pages
-import ProgramStudi from "./pages/akademik/ProgramStudi";
-import Beasiswa from "./pages/akademik/Beasiswa";
+import ProgramStudiNew from "./pages/akademik/ProgramStudiNew";
+import BeasiswaNew from "./pages/akademik/BeasiswaNew";
+import KegiatanKampus from "./pages/akademik/KegiatanKampus";
+import Perpustakaan from "./pages/akademik/Perpustakaan";
+import KalenderAkademik from "./pages/akademik/KalenderAkademik";
+import Akreditasi from "./pages/akademik/Akreditasi";
+import Pedoman from "./pages/akademik/Pedoman";
 
 // Profil Pages
 import Fasilitas from "./pages/profil/Fasilitas";
@@ -52,20 +57,16 @@ const App = () => (
             <Route path="/profil/fasilitas" element={<FasilitasNew />} />
             <Route path="/profil/sumber-daya" element={<SumberDaya />} />
             <Route path="/profil/peta-kampus" element={<PetaKampus />} />
-            <Route path="/profil/visi-misi" element={<GenericPage title="Visi & Misi" breadcrumbs={[{ label: "Profil", href: "/profil/tentang" }, { label: "Visi & Misi" }]} />} />
-            <Route path="/profil/struktur" element={<StrukturOrganisasi />} />
-            <Route path="/profil/direktur" element={<GenericPage title="Direktur & Manajemen" breadcrumbs={[{ label: "Profil", href: "/profil/tentang" }, { label: "Direktur & Manajemen" }]} />} />
-            <Route path="/profil/akreditasi" element={<GenericPage title="Akreditasi Institusi" breadcrumbs={[{ label: "Profil", href: "/profil/tentang" }, { label: "Akreditasi" }]} />} />
-            <Route path="/profil/peta" element={<PetaKampus />} />
 
             {/* Akademik Routes */}
-            <Route path="/akademik" element={<ProgramStudi />} />
-            <Route path="/akademik/program-studi" element={<ProgramStudi />} />
-            <Route path="/akademik/beasiswa" element={<Beasiswa />} />
-            <Route path="/akademik/kalender" element={<GenericPage title="Kalender Akademik" breadcrumbs={[{ label: "Akademik", href: "/akademik" }, { label: "Kalender Akademik" }]} />} />
-            <Route path="/akademik/akreditasi" element={<GenericPage title="Akreditasi Program Studi" breadcrumbs={[{ label: "Akademik", href: "/akademik" }, { label: "Akreditasi" }]} />} />
-            <Route path="/akademik/peraturan" element={<GenericPage title="Peraturan Akademik" breadcrumbs={[{ label: "Akademik", href: "/akademik" }, { label: "Peraturan Akademik" }]} />} />
-            <Route path="/akademik/jurusan/:slug" element={<GenericPage title="Jurusan" breadcrumbs={[{ label: "Akademik", href: "/akademik" }, { label: "Jurusan" }]} />} />
+            <Route path="/akademik" element={<ProgramStudiNew />} />
+            <Route path="/akademik/program-studi" element={<ProgramStudiNew />} />
+            <Route path="/akademik/beasiswa" element={<BeasiswaNew />} />
+            <Route path="/akademik/kegiatan" element={<KegiatanKampus />} />
+            <Route path="/akademik/perpustakaan" element={<Perpustakaan />} />
+            <Route path="/akademik/kalender" element={<KalenderAkademik />} />
+            <Route path="/akademik/akreditasi" element={<Akreditasi />} />
+            <Route path="/akademik/pedoman" element={<Pedoman />} />
 
             {/* Riset Routes */}
             <Route path="/riset/p3m" element={<GenericPage title="Pusat Penelitian (P3M)" breadcrumbs={[{ label: "Riset & Inovasi" }, { label: "P3M" }]} />} />
