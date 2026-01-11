@@ -29,6 +29,15 @@ import PetaKampus from "./pages/profil/PetaKampus";
 
 // Kerjasama Pages
 import Kerjasama from "./pages/kerjasama/Index";
+import Internasional from "./pages/kerjasama/Internasional";
+import Nasional from "./pages/kerjasama/Nasional";
+
+// Riset Pages
+import RisetPublikasi from "./pages/riset/RisetPublikasi";
+import PengabdianMasyarakat from "./pages/riset/PengabdianMasyarakat";
+import HakiPaten from "./pages/riset/HakiPaten";
+import JurnalSipmas from "./pages/riset/JurnalSipmas";
+import ProdukInovasi from "./pages/riset/ProdukInovasi";
 
 // Penerimaan Pages
 import Penerimaan from "./pages/penerimaan/Index";
@@ -69,10 +78,11 @@ const App = () => (
             <Route path="/akademik/pedoman" element={<Pedoman />} />
 
             {/* Riset Routes */}
-            <Route path="/riset/p3m" element={<GenericPage title="Pusat Penelitian (P3M)" breadcrumbs={[{ label: "Riset & Inovasi" }, { label: "P3M" }]} />} />
-            <Route path="/riset/jurnal" element={<GenericPage title="Jurnal SIPMAS" breadcrumbs={[{ label: "Riset & Inovasi" }, { label: "Jurnal SIPMAS" }]} />} />
-            <Route path="/riset/produk" element={<GenericPage title="Produk Inovasi" breadcrumbs={[{ label: "Riset & Inovasi" }, { label: "Produk Inovasi" }]} />} />
-            <Route path="/riset/haki" element={<GenericPage title="HAKI & Paten" breadcrumbs={[{ label: "Riset & Inovasi" }, { label: "HAKI & Paten" }]} />} />
+            <Route path="/riset/publikasi" element={<RisetPublikasi />} />
+            <Route path="/riset/pengabdian" element={<PengabdianMasyarakat />} />
+            <Route path="/riset/haki" element={<HakiPaten />} />
+            <Route path="/riset/jurnal" element={<JurnalSipmas />} />
+            <Route path="/riset/produk" element={<ProdukInovasi />} />
 
             {/* Kemahasiswaan Routes */}
             <Route path="/kemahasiswaan/ormawa" element={<GenericPage title="Organisasi Mahasiswa" breadcrumbs={[{ label: "Kemahasiswaan" }, { label: "Ormawa" }]} />} />
@@ -82,8 +92,8 @@ const App = () => (
 
             {/* Kerjasama Routes */}
             <Route path="/kerjasama" element={<Kerjasama />} />
-            <Route path="/kerjasama/industri" element={<GenericPage title="Hubungan Industri" breadcrumbs={[{ label: "Kerjasama", href: "/kerjasama" }, { label: "Hubungan Industri" }]} />} />
-            <Route path="/kerjasama/internasional" element={<GenericPage title="Kerjasama Internasional" breadcrumbs={[{ label: "Kerjasama", href: "/kerjasama" }, { label: "Internasional" }]} />} />
+            <Route path="/kerjasama/internasional" element={<Internasional />} />
+            <Route path="/kerjasama/nasional" element={<Nasional />} />
             <Route path="/kerjasama/cdc" element={<GenericPage title="Career Development Center" breadcrumbs={[{ label: "Kerjasama", href: "/kerjasama" }, { label: "CDC" }]} />} />
             <Route path="/kerjasama/tracer-study" element={<GenericPage title="Tracer Study" breadcrumbs={[{ label: "Kerjasama", href: "/kerjasama" }, { label: "Tracer Study" }]} />} />
             <Route path="/kerjasama/alumni" element={<GenericPage title="Ikatan Alumni" breadcrumbs={[{ label: "Kerjasama", href: "/kerjasama" }, { label: "Ikatan Alumni" }]} />} />

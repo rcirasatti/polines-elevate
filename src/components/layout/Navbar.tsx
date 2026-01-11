@@ -41,10 +41,11 @@ const menuItems = [
     title: "Riset & Inovasi",
     icon: FlaskConical,
     submenu: [
-      { title: "Pusat Penelitian (P3M)", href: "/riset/p3m" },
+      { title: "Riset & Publikasi", href: "/riset/publikasi" },
+      { title: "Pengabdian Masyarakat", href: "/riset/pengabdian" },
+      { title: "HAKI & Paten", href: "/riset/haki" },
       { title: "Jurnal SIPMAS", href: "/riset/jurnal" },
       { title: "Produk Inovasi", href: "/riset/produk" },
-      { title: "HAKI & Paten", href: "/riset/haki" },
     ],
   },
   {
@@ -61,8 +62,8 @@ const menuItems = [
     title: "Kerjasama",
     icon: Briefcase,
     submenu: [
-      { title: "Hubungan Industri", href: "/kerjasama/industri" },
       { title: "Kerjasama Internasional", href: "/kerjasama/internasional" },
+      { title: "Kerjasama Nasional", href: "/kerjasama/nasional" },
       { title: "Career Development Center", href: "/kerjasama/cdc" },
       { title: "Tracer Study", href: "/kerjasama/tracer-study" },
       { title: "Ikatan Alumni", href: "/kerjasama/alumni" },
