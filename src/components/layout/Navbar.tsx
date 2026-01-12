@@ -188,7 +188,7 @@ export function Navbar() {
             <Link to="/" className="flex items-center gap-3 group">
               <div className="relative w-11 h-11 flex items-center justify-center">
                 <img 
-                  src="/logo.png" 
+                  src={`${import.meta.env.BASE_URL}logo.png`}
                   alt="POLINES Logo" 
                   className="w-full h-full object-contain rounded-lg shadow-md group-hover:shadow-lg transition-shadow duration-300"
                 />
