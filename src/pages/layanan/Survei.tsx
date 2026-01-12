@@ -58,8 +58,6 @@ export default function Survei() {
           { label: "Layanan", href: "/layanan" },
           { label: "Survei" }
         ]}
-        sidebarTitle="Layanan"
-        sidebarLinks={sidebarLinks}
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -90,8 +88,6 @@ export default function Survei() {
         { label: "Layanan", href: "/layanan" },
         { label: "Survei" }
       ]}
-      sidebarTitle="Layanan"
-      sidebarLinks={sidebarLinks}
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}

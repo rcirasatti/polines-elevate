@@ -61,8 +61,6 @@ export default function ULT() {
         { label: "Layanan", href: "/layanan" },
         { label: "Unit Layanan Terpadu" }
       ]}
-      sidebarTitle="Layanan"
-      sidebarLinks={sidebarLinks}
     >
       {/* Hero */}
       <motion.div

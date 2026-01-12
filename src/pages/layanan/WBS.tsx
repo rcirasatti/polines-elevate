@@ -74,8 +74,6 @@ export default function WBS() {
         { label: "Layanan", href: "/layanan" },
         { label: "Whistleblowing System" }
       ]}
-      sidebarTitle="Layanan"
-      sidebarLinks={sidebarLinks}
     >
       {/* Hero Card */}
       <motion.div

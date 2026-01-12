@@ -73,8 +73,6 @@ export default function Fasilitas() {
         { label: "Profil", href: "/profil" },
         { label: "Fasilitas" },
       ]}
-      sidebarTitle="Menu Profil"
-      sidebarLinks={sidebarLinks}
     >
       <div className="space-y-6">
         {/* Header */}

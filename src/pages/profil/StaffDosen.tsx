@@ -117,8 +117,6 @@ export default function StaffDosen() {
         { label: "Profil", href: "/profil/tentang" },
         { label: "Staff & Dosen" }
       ]}
-      sidebarTitle="Profil"
-      sidebarLinks={sidebarLinks}
     >
       {/* Stats */}
       <motion.div

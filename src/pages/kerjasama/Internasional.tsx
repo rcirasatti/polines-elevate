@@ -120,8 +120,7 @@ export default function Internasional() {
         { label: "Kerjasama", href: "/kerjasama" },
         { label: "Internasional" },
       ]}
-      sidebarTitle="Kerjasama"
-      sidebarLinks={sidebarLinks}
+
     >
       {/* World Map Section */}
       <motion.div

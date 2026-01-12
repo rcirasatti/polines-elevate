@@ -98,8 +98,6 @@ export default function JurnalSipmas() {
         { label: "Riset & Inovasi" },
         { label: "Jurnal SIPMAS" },
       ]}
-      sidebarTitle="Riset & Inovasi"
-      sidebarLinks={sidebarLinks}
     >
       {/* Journal Info Card */}
       <motion.div

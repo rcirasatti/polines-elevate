@@ -126,8 +126,6 @@ export default function Beasiswa() {
         { label: "Akademik", href: "/akademik" },
         { label: "Beasiswa" },
       ]}
-      sidebarTitle="Menu Akademik"
-      sidebarLinks={sidebarLinks}
     >
       <div className="space-y-6">
         {/* Header */}

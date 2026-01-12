@@ -81,8 +81,6 @@ export default function KalenderAkademik() {
         { label: "Akademik", href: "/akademik" },
         { label: "Kalender Akademik" },
       ]}
-      sidebarTitle="Menu Akademik"
-      sidebarLinks={sidebarLinks}
     >
       <div className="space-y-8">
         {/* Quick Actions */}

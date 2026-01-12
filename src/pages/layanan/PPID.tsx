@@ -71,8 +71,6 @@ export default function PPID() {
         { label: "Layanan", href: "/layanan" },
         { label: "PPID" }
       ]}
-      sidebarTitle="Layanan"
-      sidebarLinks={sidebarLinks}
     >
       {/* Search */}
       <motion.div

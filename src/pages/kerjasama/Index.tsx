@@ -51,8 +51,6 @@ export default function Kerjasama() {
       title="Kerjasama"
       subtitle="Jaringan mitra strategis nasional dan internasional"
       breadcrumbs={[{ label: "Kerjasama" }]}
-      sidebarTitle="Menu Kerjasama"
-      sidebarLinks={sidebarLinks}
     >
       <div className="space-y-8">
         {/* Header */}

@@ -127,8 +127,6 @@ export default function LayananIndex() {
         { label: "Beranda", href: "/" },
         { label: "Layanan" }
       ]}
-      sidebarTitle="Layanan"
-      sidebarLinks={sidebarLinks}
     >
       {/* Search */}
       <motion.div

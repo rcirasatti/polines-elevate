@@ -1,22 +1,16 @@
-# Welcome to your Lovable project
+# Politeknik Negeri Semarang - Website Redesign
 
-## Project info
+## Project Info
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**Website**: https://polines.ac.id
 
-## How can I edit this code?
+## Development Setup
 
-There are several ways of editing your application.
+There are several ways of working with this project.
 
-**Use Lovable**
+**Using Local IDE**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+You can clone this repo and work locally using your preferred IDE.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -62,12 +56,41 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Deploy to GitHub Pages (Automatic)
 
-## Can I connect a custom domain to my Lovable project?
+1. **Push to GitHub**:
+   ```sh
+   git add .
+   git commit -m "Deploy website"
+   git push origin main
+   ```
 
-Yes, you can!
+2. **Enable GitHub Pages**:
+   - Go to your repository → Settings → Pages
+   - Under "Build and deployment", select:
+     - Source: `GitHub Actions`
+   - The workflow will automatically deploy when you push to `main`
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+3. **Access your site**:
+   - Your site will be available at: `https://YOUR_USERNAME.github.io/polines-elevate/`
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Deploy Locally
+
+To test the build locally:
+
+```sh
+npm run build
+npm run preview
+```
+
+Then open `http://localhost:4173` in your browser.
+
+### Connect Custom Domain
+
+To connect a custom domain (e.g., polines.ac.id):
+
+1. Go to Settings → Pages
+2. Under "Custom domain", enter your domain
+3. Update your domain's DNS records to point to GitHub Pages
+
+Read more: [GitHub Pages Documentation](https://docs.github.com/en/pages)

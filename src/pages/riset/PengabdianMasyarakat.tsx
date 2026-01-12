@@ -137,8 +137,6 @@ export default function PengabdianMasyarakat() {
         { label: "Riset & Inovasi" },
         { label: "Pengabdian Masyarakat" },
       ]}
-      sidebarTitle="Riset & Inovasi"
-      sidebarLinks={sidebarLinks}
     >
       {/* Hero Image Section */}
       <motion.div

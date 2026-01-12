@@ -76,8 +76,6 @@ export default function MikroTik() {
         { label: "Layanan", href: "/layanan" },
         { label: "MikroTik Academy" }
       ]}
-      sidebarTitle="Layanan"
-      sidebarLinks={sidebarLinks}
     >
       {/* Hero */}
       <motion.div

@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { TrendingUp, Briefcase, Lightbulb, Award } from "lucide-react";
+import { TrendingUp, Briefcase, Lightbulb, Award, GraduationCap } from "lucide-react";
 
 const stats = [
   {
@@ -8,7 +8,8 @@ const stats = [
     value: 90,
     suffix: "%",
     label: "Serapan Kerja",
-    description: "Lulusan langsung bekerja",
+    description: "Lulusan langsung bekerja dalam 6 bulan",
+    color: "from-emerald-400 to-emerald-600"
   },
   {
     icon: Briefcase,
@@ -16,13 +17,15 @@ const stats = [
     suffix: "+",
     label: "Mitra Industri",
     description: "Perusahaan partner strategis",
+    color: "from-blue-400 to-blue-600"
   },
   {
-    icon: Award,
-    value: 27,
+    icon: GraduationCap,
+    value: 35,
     suffix: "",
     label: "Program Studi",
     description: "D3, D4, dan Pascasarjana",
+    color: "from-violet-400 to-violet-600"
   },
   {
     icon: Lightbulb,
@@ -30,13 +33,14 @@ const stats = [
     suffix: "+",
     label: "Paten & HAKI",
     description: "Inovasi terdaftar resmi",
+    color: "from-amber-400 to-amber-600"
   },
 ];
 
 function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   useEffect(() => {
     if (isInView) {
@@ -68,11 +72,13 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 
 export function ImpactStats() {
   return (
-    <section className="py-20 bg-gradient-to-br from-primary via-maroon-dark to-primary relative overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-secondary rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-gold-light rounded-full blur-3xl" />
+    <section className="section-spacing bg-gradient-to-br from-primary via-polines-blue-dark to-[hsl(210,90%,18%)] relative overflow-hidden">
+      {/* Enhanced Decorative Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gold-light/10 rounded-full blur-[100px]" />
+        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
       </div>
 
       <div className="section-container relative z-10">
@@ -83,17 +89,23 @@ export function ImpactStats() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          {/* Section Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
+            <Award className="w-4 h-4 text-secondary" />
+            <span className="text-sm font-medium text-white/90">Prestasi & Dampak</span>
+          </div>
+          
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 font-heading">
             Dampak Nyata{" "}
             <span className="text-gradient-gold">Polines</span>
           </h2>
-          <p className="text-white/70 max-w-2xl mx-auto">
+          <p className="text-white/70 max-w-2xl mx-auto text-lg leading-relaxed">
             Komitmen kami menghasilkan lulusan berkualitas tinggi yang siap 
             menjawab tantangan industri dan berkontribusi untuk kemajuan bangsa.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -103,21 +115,27 @@ export function ImpactStats() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-white/5 rounded-2xl backdrop-blur-xl border border-white/10 transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/20" />
+              {/* Card Background with hover effect */}
+              <div className="absolute inset-0 bg-white/[0.06] rounded-2xl backdrop-blur-xl border border-white/10 transition-all duration-500 group-hover:bg-white/[0.1] group-hover:border-white/20 group-hover:scale-[1.02]" />
               
               <div className="relative p-6 lg:p-8 text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-secondary/20 rounded-xl">
-                  <stat.icon className="w-7 h-7 text-secondary" />
+                {/* Icon with gradient background */}
+                <div className={`inline-flex items-center justify-center w-14 h-14 mb-5 rounded-xl bg-gradient-to-br ${stat.color} shadow-lg`}>
+                  <stat.icon className="w-6 h-6 text-white" />
                 </div>
                 
-                <div className="mb-2">
+                {/* Animated Number */}
+                <div className="mb-3">
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </div>
                 
-                <h3 className="text-lg font-semibold text-white mb-1">
+                {/* Label */}
+                <h3 className="text-lg font-bold text-white mb-1.5 font-heading">
                   {stat.label}
                 </h3>
-                <p className="text-sm text-white/60">
+                
+                {/* Description */}
+                <p className="text-sm text-white/60 leading-relaxed">
                   {stat.description}
                 </p>
               </div>

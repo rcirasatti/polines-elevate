@@ -104,8 +104,6 @@ export default function SistemInformasi() {
         { label: "Layanan", href: "/layanan" },
         { label: "Sistem Informasi" }
       ]}
-      sidebarTitle="Layanan"
-      sidebarLinks={sidebarLinks}
     >
       {/* System Grid */}
       <motion.div

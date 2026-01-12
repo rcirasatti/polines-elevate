@@ -161,9 +161,9 @@ const sidebarLinks = [
 ];
 
 const statusConfig = {
-  OPEN: { label: "OPEN", color: "bg-green-500 text-white" },
-  ON_PROCESS: { label: "ON PROCESS", color: "bg-yellow-500 text-white" },
-  CLOSED: { label: "CLOSED", color: "bg-red-500 text-white" },
+  OPEN: { label: "OPEN", color: "bg-green-600 text-white font-semibold" },
+  ON_PROCESS: { label: "ON PROCESS", color: "bg-amber-700 text-white font-semibold" },
+  CLOSED: { label: "CLOSED", color: "bg-red-600 text-white font-semibold" },
 };
 
 const jenisConfig = {
@@ -198,8 +198,6 @@ export default function BeasiswaNew() {
         { label: "Akademik", href: "/akademik" },
         { label: "Beasiswa" },
       ]}
-      sidebarTitle="Menu Akademik"
-      sidebarLinks={sidebarLinks}
     >
       <div className="space-y-8">
         {/* Popular Scholarships - Top Cards */}
@@ -312,7 +310,7 @@ export default function BeasiswaNew() {
                   variant={filterStatus === "OPEN" ? "default" : "outline"}
                   size="sm"
                   onClick={() => setFilterStatus("OPEN")}
-                  className={filterStatus === "OPEN" ? "bg-green-600" : ""}
+                  className={filterStatus === "OPEN" ? "bg-green-600 hover:bg-green-700" : ""}
                 >
                   Open
                 </Button>
@@ -320,7 +318,7 @@ export default function BeasiswaNew() {
                   variant={filterStatus === "ON_PROCESS" ? "default" : "outline"}
                   size="sm"
                   onClick={() => setFilterStatus("ON_PROCESS")}
-                  className={filterStatus === "ON_PROCESS" ? "bg-yellow-500" : ""}
+                  className={filterStatus === "ON_PROCESS" ? "bg-amber-700 hover:bg-amber-800 text-white" : ""}
                 >
                   On Process
                 </Button>
@@ -328,7 +326,7 @@ export default function BeasiswaNew() {
                   variant={filterStatus === "CLOSED" ? "default" : "outline"}
                   size="sm"
                   onClick={() => setFilterStatus("CLOSED")}
-                  className={filterStatus === "CLOSED" ? "bg-red-500" : ""}
+                  className={filterStatus === "CLOSED" ? "bg-red-600 hover:bg-red-700" : ""}
                 >
                   Closed
                 </Button>

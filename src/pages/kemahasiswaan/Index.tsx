@@ -141,8 +141,6 @@ export default function KemahasiswaanIndex() {
         { label: "Beranda", href: "/" },
         { label: "Kemahasiswaan" }
       ]}
-      sidebarTitle="Kemahasiswaan"
-      sidebarLinks={sidebarLinks}
     >
       {/* Search Section */}
       <motion.div

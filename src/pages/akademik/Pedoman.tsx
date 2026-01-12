@@ -107,8 +107,6 @@ export default function Pedoman() {
         { label: "Akademik", href: "/akademik" },
         { label: "Pedoman" },
       ]}
-      sidebarTitle="Menu Akademik"
-      sidebarLinks={sidebarLinks}
     >
       <div className="space-y-8">
         {/* Category Cards */}

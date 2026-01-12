@@ -172,8 +172,7 @@ export default function PetaKampus() {
         { label: "Profil", href: "/profil/tentang" },
         { label: "Peta Kampus" },
       ]}
-      sidebarTitle="Menu Profil"
-      sidebarLinks={sidebarLinks}
+
     >
       {/* Search */}
       <div className="mb-6">

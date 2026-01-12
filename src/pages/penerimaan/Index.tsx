@@ -48,8 +48,6 @@ export default function Penerimaan() {
       title="Penerimaan Mahasiswa Baru"
       subtitle="PMB Politeknik Negeri Semarang 2025"
       breadcrumbs={[{ label: "Penerimaan Mahasiswa Baru" }]}
-      sidebarTitle="Menu PMB"
-      sidebarLinks={sidebarLinks}
     >
       <div className="space-y-8">
         {/* Header */}

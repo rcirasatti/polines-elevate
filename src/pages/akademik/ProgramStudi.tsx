@@ -82,8 +82,6 @@ export default function ProgramStudi() {
         { label: "Akademik", href: "/akademik" },
         { label: "Program Studi" },
       ]}
-      sidebarTitle="Menu Akademik"
-      sidebarLinks={sidebarLinks}
     >
       <div className="space-y-6">
         {/* Header */}
@@ -115,6 +113,7 @@ export default function ProgramStudi() {
           <select
             value={filterJurusan}
             onChange={(e) => setFilterJurusan(e.target.value)}
+            aria-label="Filter program studi berdasarkan jurusan"
             className="px-4 py-2 rounded-lg border border-input bg-background text-foreground"
           >
             <option value="all">Semua Jurusan</option>

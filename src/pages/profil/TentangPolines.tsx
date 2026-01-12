@@ -27,9 +27,9 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-campus.jpg";
 
 const quickLinks = [
-  { label: "Sejarah", href: "#sejarah" },
   { label: "Visi & Misi", href: "#visi-misi" },
-  { label: "Struktur Organisasi", href: "#struktur" },
+  { label: "Sejarah", href: "#sejarah" },
+  { label: "Pimpinan", href: "#pimpinan" },
   { label: "Akreditasi", href: "#akreditasi" },
 ];
 
@@ -93,8 +93,15 @@ const timelineData = [
   {
     year: "Sekarang",
     title: "Era Baru",
-    description: "Menjadi pusat unggulan pendidikan vokasi dengan 27 program studi dan 500+ mitra industri.",
+    description: "Menjadi pusat unggulan pendidikan vokasi dengan 31 program studi dan 500+ mitra industri.",
   },
+];
+
+const pimpinanData = [
+  { title: "Direktur", name: "Dr. Ir. Supriyadi, M.T.", icon: Star },
+  { title: "Wakil Direktur I", name: "Drs. Ahmad Fauzi, M.M.", icon: Users },
+  { title: "Wakil Direktur II", name: "Ir. Budi Santoso, M.Eng.", icon: Building2 },
+  { title: "Wakil Direktur III", name: "Dr. Siti Aminah, M.Pd.", icon: GraduationCap },
 ];
 
 const akreditasiData = [
@@ -289,7 +296,7 @@ export default function TentangPolines() {
         </div>
       </section>
 
-      {/* Timeline Section */}
+      {/* Timeline Sejarah */}
       <section id="sejarah" className="py-20">
         <div className="section-container">
           <motion.div
@@ -299,7 +306,7 @@ export default function TentangPolines() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Perjalanan Sejarah
+              Perjalanan Sejarah Polines
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Lebih dari 4 dekade mengukir prestasi dalam pendidikan vokasi Indonesia
@@ -339,20 +346,11 @@ export default function TentangPolines() {
               ))}
             </div>
           </div>
-
-          <div className="text-center mt-12">
-            <Link to="/profil/sejarah">
-              <Button variant="outline" className="gap-2">
-                Lihat Sejarah Lengkap
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Struktur Organisasi Preview */}
-      <section id="struktur" className="bg-muted/50 py-20">
+      {/* Pimpinan / Struktur Organisasi Preview */}
+      <section id="pimpinan" className="bg-muted/50 py-20">
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -361,7 +359,7 @@ export default function TentangPolines() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Struktur Organisasi
+              Pimpinan Polines
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Kepemimpinan yang profesional dan berintegritas
@@ -369,12 +367,7 @@ export default function TentangPolines() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {[
-              { title: "Direktur", name: "Dr. Ir. Supriyadi, M.T.", icon: Star },
-              { title: "Wakil Direktur I", name: "Drs. Ahmad Fauzi, M.M.", icon: Users },
-              { title: "Wakil Direktur II", name: "Ir. Budi Santoso, M.Eng.", icon: Building2 },
-              { title: "Wakil Direktur III", name: "Dr. Siti Aminah, M.Pd.", icon: GraduationCap },
-            ].map((person, index) => (
+            {pimpinanData.map((person, index) => (
               <motion.div
                 key={person.title}
                 initial={{ opacity: 0, y: 20 }}

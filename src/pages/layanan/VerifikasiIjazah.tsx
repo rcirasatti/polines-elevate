@@ -43,8 +43,6 @@ export default function VerifikasiIjazah() {
         { label: "Layanan", href: "/layanan" },
         { label: "Verifikasi Ijazah" }
       ]}
-      sidebarTitle="Layanan"
-      sidebarLinks={sidebarLinks}
     >
       {/* Verification Form */}
       <motion.div

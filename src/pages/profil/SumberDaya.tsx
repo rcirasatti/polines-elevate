@@ -206,8 +206,7 @@ export default function SumberDaya() {
         { label: "Profil", href: "/profil/tentang" },
         { label: "Sumber Daya Bagian" },
       ]}
-      sidebarTitle="Menu Profil"
-      sidebarLinks={sidebarLinks}
+
     >
       {/* Department Tabs */}
       <div className="mb-8 overflow-x-auto pb-2">
@@ -294,7 +293,7 @@ export default function SumberDaya() {
                     <p className="text-white/80">{currentDept.head.position}</p>
                   </div>
                   <div className="flex gap-2">
-                    <Button size="icon" variant="secondary" asChild>
+                    <Button size="icon" variant="secondary" asChild title={`Email ${currentDept.head.name}`}>
                       <a href={`mailto:${currentDept.head.email}`}>
                         <Mail className="w-4 h-4" />
                       </a>

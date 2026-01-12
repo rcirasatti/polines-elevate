@@ -159,8 +159,7 @@ export default function Nasional() {
         { label: "Kerjasama", href: "/kerjasama" },
         { label: "Nasional" },
       ]}
-      sidebarTitle="Kerjasama"
-      sidebarLinks={sidebarLinks}
+
     >
       {/* Stats Overview */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">

@@ -21,8 +21,8 @@ interface SubPageLayoutProps {
   title: string;
   subtitle?: string;
   breadcrumbs: BreadcrumbItem[];
-  sidebarTitle: string;
-  sidebarLinks: SidebarLink[];
+  sidebarTitle?: string;
+  sidebarLinks?: SidebarLink[];
   children: ReactNode;
 }
 
@@ -34,6 +34,8 @@ export function SubPageLayout({
   sidebarLinks,
   children,
 }: SubPageLayoutProps) {
+  const hasSidebar = sidebarTitle && sidebarLinks && sidebarLinks.length > 0;
+  
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -91,44 +93,46 @@ export function SubPageLayout({
 
       {/* Main Content */}
       <div className="section-container py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Sidebar */}
-          <motion.aside
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-1"
-          >
-            <div className="bg-card rounded-xl border border-border shadow-sm p-6 sticky top-28">
-              <h3 className="font-bold text-lg text-primary mb-4 flex items-center gap-2">
-                <ChevronRight className="w-5 h-5 text-secondary" />
-                {sidebarTitle}
-              </h3>
-              <ul className="space-y-2">
-                {sidebarLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      to={link.href}
-                      className={`block px-4 py-2 rounded-lg transition-colors ${
-                        link.active
-                          ? "bg-primary text-primary-foreground"
-                          : "text-muted-foreground hover:bg-muted hover:text-primary"
-                      }`}
-                    >
-                      {link.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.aside>
+        <div className={hasSidebar ? "grid grid-cols-1 lg:grid-cols-4 gap-8" : "w-full"}>
+          {/* Sidebar - Only show if hasSidebar */}
+          {hasSidebar && (
+            <motion.aside
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="lg:col-span-1"
+            >
+              <div className="bg-card rounded-xl border border-border shadow-sm p-6 sticky top-64">
+                <h3 className="font-bold text-lg text-primary mb-4 flex items-center gap-2">
+                  <ChevronRight className="w-5 h-5 text-secondary" />
+                  {sidebarTitle}
+                </h3>
+                <ul className="space-y-2">
+                  {sidebarLinks?.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        to={link.href}
+                        className={`block px-4 py-2 rounded-lg transition-colors ${
+                          link.active
+                            ? "bg-primary text-primary-foreground"
+                            : "text-muted-foreground hover:bg-muted hover:text-primary"
+                        }`}
+                      >
+                        {link.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.aside>
+          )}
 
           {/* Main Content Area */}
           <motion.main
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="lg:col-span-3"
+            className={hasSidebar ? "lg:col-span-3" : "w-full"}
           >
             <div className="bg-card rounded-xl border border-border shadow-sm p-6 md:p-8">
               {children}

@@ -202,8 +202,7 @@ export default function FasilitasNew() {
         { label: "Profil", href: "/profil/tentang" },
         { label: "Fasilitas" },
       ]}
-      sidebarTitle="Menu Profil"
-      sidebarLinks={sidebarLinks}
+
     >
       {/* Search */}
       <div className="mb-6">

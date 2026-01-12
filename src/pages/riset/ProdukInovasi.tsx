@@ -138,8 +138,6 @@ export default function ProdukInovasi() {
         { label: "Riset & Inovasi" },
         { label: "Produk Inovasi" },
       ]}
-      sidebarTitle="Riset & Inovasi"
-      sidebarLinks={sidebarLinks}
     >
       {/* Hero Stats */}
       <motion.div

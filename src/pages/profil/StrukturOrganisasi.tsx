@@ -195,8 +195,7 @@ export default function StrukturOrganisasi() {
         { label: "Profil", href: "/profil/tentang" },
         { label: "Struktur Organisasi" },
       ]}
-      sidebarTitle="Menu Profil"
-      sidebarLinks={sidebarLinks}
+
     >
       {/* Search Bar */}
       <div className="mb-8">

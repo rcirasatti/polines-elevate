@@ -87,8 +87,6 @@ export default function Akreditasi() {
         { label: "Akademik", href: "/akademik" },
         { label: "Akreditasi" },
       ]}
-      sidebarTitle="Menu Akademik"
-      sidebarLinks={sidebarLinks}
     >
       <div className="space-y-8">
         {/* Main Accreditation Badge */}

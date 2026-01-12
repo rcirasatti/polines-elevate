@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { 
   Building2, Cog, Zap, Calculator, Briefcase, 
   ArrowRight, Users, BookOpen, Trophy
@@ -148,10 +149,12 @@ export function DepartmentsSection() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="text-center mt-12"
         >
-          <Button variant="gold" size="xl">
-            Lihat Semua Program Studi
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
+          <Link to="/akademik/program-studi">
+            <Button variant="gold" size="xl">
+              Lihat Semua Program Studi
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

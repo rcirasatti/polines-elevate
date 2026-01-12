@@ -125,8 +125,6 @@ export default function RisetPublikasi() {
         { label: "Riset & Inovasi" },
         { label: "Riset & Publikasi" },
       ]}
-      sidebarTitle="Riset & Inovasi"
-      sidebarLinks={sidebarLinks}
     >
       {/* Statistics Bar */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">

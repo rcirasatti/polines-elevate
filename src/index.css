@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+/* 
+  POLINES Design System v2.0
+  Senior UI/UX Art Director Redesign
+  ================================
+  Typography: Plus Jakarta Sans (headings) + Inter (body)
+  Color Philosophy: Professional blue with gold accents
+  Spacing: 4px base unit system
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,110 +15,192 @@
 
 @layer base {
   :root {
-    /* Polines Brand Colors - Updated */
-    --background: 210 20% 98%;
-    --foreground: 210 40% 10%;
-
+    /* ========================================
+       SEMANTIC COLOR SYSTEM - Light Mode
+       ======================================== */
+    
+    /* Surface Colors */
+    --background: 210 25% 98.5%;
+    --foreground: 215 25% 15%;
+    
+    /* Card & Container */
     --card: 0 0% 100%;
-    --card-foreground: 210 40% 10%;
-
+    --card-foreground: 215 25% 15%;
+    
+    /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 210 40% 10%;
-
-    /* Primary: Deep Blue #155CB3 = hsl(210, 80%, 39%) */
-    --primary: 210 80% 39%;
+    --popover-foreground: 215 25% 15%;
+    
+    /* ========================================
+       BRAND COLORS - Polines Identity
+       ======================================== */
+    
+    /* Primary: Polines Blue - Professional & Trustworthy */
+    /* Base: #0D4C8B (hsl 210 82% 30%) - Deeper, more sophisticated */
+    --primary: 210 82% 30%;
     --primary-foreground: 0 0% 100%;
-
-    /* Secondary: Polines Gold #F8C300 = hsl(47, 100%, 49%) */
-    --secondary: 47 100% 49%;
-    --secondary-foreground: 210 40% 10%;
-
+    
+    /* Secondary: Polines Gold - Excellence & Achievement */
+    /* Base: #E5A800 (hsl 43 100% 45%) - Richer, less harsh */
+    --secondary: 43 100% 45%;
+    --secondary-foreground: 215 25% 15%;
+    
+    /* ========================================
+       UI STATE COLORS
+       ======================================== */
+    
+    /* Muted - Subtle backgrounds */
     --muted: 210 20% 96%;
-    --muted-foreground: 210 16% 47%;
-
-    --accent: 47 100% 49%;
-    --accent-foreground: 210 40% 10%;
-
-    --destructive: 0 84% 60%;
+    --muted-foreground: 215 15% 50%;
+    
+    /* Accent - Interactive highlights */
+    --accent: 210 95% 95%;
+    --accent-foreground: 210 82% 30%;
+    
+    /* Destructive */
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 210 80% 39%;
-
-    --radius: 0.75rem;
-
-    /* Custom Polines Variables */
-    --polines-blue: 210 80% 39%;
-    --polines-blue-light: 210 70% 50%;
-    --polines-blue-dark: 210 90% 30%;
-    --gold: 47 100% 49%;
-    --gold-light: 47 100% 60%;
-    --gold-dark: 47 100% 40%;
+    
+    /* Success */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Warning */
+    --warning: 38 92% 50%;
+    --warning-foreground: 215 25% 15%;
+    
+    /* Info */
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+    
+    /* ========================================
+       FORM & INTERACTION COLORS
+       ======================================== */
+    
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 210 82% 30%;
+    
+    /* ========================================
+       DESIGN TOKENS
+       ======================================== */
+    
+    --radius: 0.625rem;
+    
+    /* Polines Brand Extended Palette */
+    --polines-blue: 210 82% 30%;
+    --polines-blue-light: 210 70% 45%;
+    --polines-blue-dark: 210 90% 22%;
+    --polines-blue-50: 210 100% 97%;
+    --polines-blue-100: 210 95% 93%;
+    
+    --gold: 43 100% 45%;
+    --gold-light: 45 100% 55%;
+    --gold-dark: 40 100% 35%;
+    --gold-50: 45 100% 96%;
+    --gold-100: 45 95% 88%;
     
     /* Glassmorphism */
-    --glass-bg: 0 0% 100% / 0.7;
-    --glass-border: 0 0% 100% / 0.3;
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    --glass-bg: 0 0% 100% / 0.85;
+    --glass-border: 0 0% 100% / 0.4;
+    --glass-shadow: 0 8px 32px 0 rgba(13, 76, 139, 0.08);
+    
+    /* Elevation Shadows */
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+    --shadow-gold: 0 10px 40px -10px rgba(229, 168, 0, 0.4);
+    --shadow-blue: 0 10px 40px -10px rgba(13, 76, 139, 0.3);
 
     /* Sidebar */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 210 40% 26%;
-    --sidebar-primary: 210 80% 39%;
+    --sidebar-background: 0 0% 99%;
+    --sidebar-foreground: 215 25% 25%;
+    --sidebar-primary: 210 82% 30%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 47 100% 95%;
-    --sidebar-accent-foreground: 210 80% 39%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 210 80% 39%;
+    --sidebar-accent: 210 100% 97%;
+    --sidebar-accent-foreground: 210 82% 30%;
+    --sidebar-border: 214 20% 92%;
+    --sidebar-ring: 210 82% 30%;
   }
 
   .dark {
-    --background: 210 20% 8%;
-    --foreground: 0 0% 98%;
+    /* ========================================
+       SEMANTIC COLOR SYSTEM - Dark Mode
+       ======================================== */
+    
+    --background: 215 25% 9%;
+    --foreground: 210 20% 95%;
 
-    --card: 210 20% 12%;
-    --card-foreground: 0 0% 98%;
+    --card: 215 25% 12%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 210 20% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 215 25% 12%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 210 80% 50%;
+    /* Primary: Lighter blue for dark mode */
+    --primary: 210 80% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 47 100% 52%;
-    --secondary-foreground: 210 40% 10%;
+    /* Secondary: Brighter gold for dark mode */
+    --secondary: 45 100% 50%;
+    --secondary-foreground: 215 25% 10%;
 
-    --muted: 210 20% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 215 20% 18%;
+    --muted-foreground: 210 15% 60%;
 
-    --accent: 47 100% 52%;
-    --accent-foreground: 210 40% 10%;
+    --accent: 215 25% 18%;
+    --accent-foreground: 210 80% 65%;
 
-    --destructive: 0 62% 30%;
+    --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 20% 18%;
-    --input: 210 20% 18%;
-    --ring: 210 80% 50%;
+    --success: 142 76% 42%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 55%;
+    --warning-foreground: 215 25% 10%;
+    
+    --info: 199 89% 55%;
+    --info-foreground: 0 0% 100%;
 
-    --polines-blue: 210 80% 50%;
-    --polines-blue-light: 210 70% 60%;
-    --polines-blue-dark: 210 90% 40%;
-    --gold: 47 100% 55%;
-    --gold-light: 47 100% 65%;
-    --gold-dark: 47 100% 45%;
+    --border: 215 20% 22%;
+    --input: 215 20% 22%;
+    --ring: 210 80% 55%;
 
-    --glass-bg: 210 20% 15% / 0.7;
-    --glass-border: 210 20% 25% / 0.3;
+    --polines-blue: 210 80% 55%;
+    --polines-blue-light: 210 70% 65%;
+    --polines-blue-dark: 210 90% 45%;
+    --polines-blue-50: 210 50% 15%;
+    --polines-blue-100: 210 45% 20%;
+    
+    --gold: 45 100% 50%;
+    --gold-light: 47 100% 60%;
+    --gold-dark: 43 100% 40%;
+    --gold-50: 45 50% 15%;
+    --gold-100: 45 45% 20%;
 
-    --sidebar-background: 210 20% 10%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 210 80% 50%;
+    --glass-bg: 215 25% 15% / 0.85;
+    --glass-border: 215 20% 30% / 0.4;
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.25), 0 1px 2px -1px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.25), 0 2px 4px -2px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.25), 0 4px 6px -4px rgba(0, 0, 0, 0.25);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    --shadow-gold: 0 10px 40px -10px rgba(229, 168, 0, 0.3);
+    --shadow-blue: 0 10px 40px -10px rgba(64, 150, 255, 0.3);
+
+    --sidebar-background: 215 25% 10%;
+    --sidebar-foreground: 210 15% 90%;
+    --sidebar-primary: 210 80% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 20% 15%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 210 20% 18%;
-    --sidebar-ring: 210 80% 50%;
+    --sidebar-accent: 215 25% 15%;
+    --sidebar-accent-foreground: 210 15% 90%;
+    --sidebar-border: 215 20% 18%;
+    --sidebar-ring: 210 80% 55%;
   }
 }
 
@@ -120,150 +211,428 @@
 
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    @apply bg-background text-foreground font-poppins antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+  }
+  
+  /* Typography Scale - Inter for Everything (Professional & Consistent) */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  
+  h1 { @apply text-3xl md:text-4xl lg:text-5xl; }
+  h2 { @apply text-2xl md:text-3xl lg:text-4xl; }
+  h3 { @apply text-xl md:text-2xl; }
+  h4 { @apply text-lg md:text-xl font-semibold; }
+  h5 { @apply text-base md:text-lg font-semibold; }
+  h6 { @apply text-base font-semibold; }
+  
+  /* Paragraph readability */
+  p {
+    @apply text-base leading-relaxed;
+    max-width: 75ch;
+  }
+  
+  /* Focus states for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
   }
 }
 
 @layer components {
-  /* Glassmorphism Card */
+  /* ========================================
+     GLASSMORPHISM SYSTEM
+     ======================================== */
+  
   .glass-card {
-    @apply bg-white/70 backdrop-blur-xl border border-white/30 shadow-lg;
+    @apply bg-white/80 dark:bg-card/80 backdrop-blur-xl border border-white/40 dark:border-white/10;
+    box-shadow: var(--shadow-lg), inset 0 1px 0 0 rgba(255,255,255,0.1);
   }
 
   .glass-nav {
-    @apply bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-sm;
+    @apply bg-white/90 dark:bg-card/90 backdrop-blur-xl border-b border-border/50;
+    box-shadow: var(--shadow-sm);
   }
 
-  /* Gradient Backgrounds */
+  /* ========================================
+     GRADIENT SYSTEM
+     ======================================== */
+  
   .gradient-primary {
     @apply bg-gradient-to-br from-primary via-[hsl(var(--polines-blue-light))] to-primary;
   }
 
   .gradient-gold {
-    @apply bg-gradient-to-r from-secondary to-[hsl(var(--gold-light))];
+    @apply bg-gradient-to-r from-secondary via-[hsl(var(--gold-light))] to-secondary;
   }
 
   .gradient-hero {
     background: linear-gradient(135deg, 
-      hsl(var(--polines-blue)) 0%, 
-      hsl(var(--polines-blue-dark)) 50%,
-      hsl(210 90% 25%) 100%
+      hsl(var(--polines-blue-dark)) 0%, 
+      hsl(var(--polines-blue)) 40%,
+      hsl(var(--polines-blue-light)) 100%
+    );
+  }
+  
+  .gradient-subtle {
+    background: linear-gradient(135deg, 
+      hsl(var(--polines-blue-50)) 0%, 
+      hsl(var(--background)) 100%
     );
   }
 
-  /* Text Gradients */
+  /* ========================================
+     TEXT EFFECTS
+     ======================================== */
+  
   .text-gradient-gold {
-    @apply bg-gradient-to-r from-secondary to-[hsl(var(--gold-light))] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-secondary via-[hsl(var(--gold-light))] to-secondary bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-primary to-[hsl(var(--polines-blue-light))] bg-clip-text text-transparent;
   }
 
-  /* Hover Card Effect */
+  /* ========================================
+     INTERACTIVE EFFECTS
+     ======================================== */
+  
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: var(--shadow-gold);
   }
 
-  /* Section Container */
+  /* ========================================
+     LAYOUT CONTAINERS
+     ======================================== */
+  
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-wide {
+    @apply max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Department Card Styles */
+  /* ========================================
+     CARD VARIANTS
+     ======================================== */
+  
+  .card-elevated {
+    @apply bg-card rounded-2xl border border-border/50 p-6;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-elevated:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+  }
+  
+  .card-interactive {
+    @apply bg-card rounded-xl border border-border/50 overflow-hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-interactive:hover {
+    @apply border-primary/20;
+    box-shadow: var(--shadow-lg), 0 0 0 1px hsl(var(--primary) / 0.1);
+    transform: translateY(-4px);
+  }
+  
+  .card-feature {
+    @apply relative bg-card rounded-2xl border border-border/30 p-8 overflow-hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-feature::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: linear-gradient(135deg, hsl(var(--polines-blue-50)), hsl(var(--gold-50)));
+  }
+  
+  .card-feature:hover {
+    @apply border-primary/30;
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-6px);
+  }
+  
+  .card-feature:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Department Card - Special variant */
   .dept-card {
-    @apply relative overflow-hidden rounded-2xl p-6 transition-all duration-500;
-    @apply bg-white/80 backdrop-blur-sm border border-white/30;
-    @apply hover:shadow-2xl hover:-translate-y-2;
+    @apply relative overflow-hidden rounded-2xl p-6;
+    @apply bg-white/90 dark:bg-card/90 backdrop-blur-sm border border-border/30;
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dept-card:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-6px);
+    @apply border-primary/30;
   }
 
   .dept-card::before {
     content: '';
     @apply absolute inset-0 opacity-0 transition-opacity duration-500;
-    background: linear-gradient(135deg, hsl(var(--maroon) / 0.05), hsl(var(--gold) / 0.1));
+    background: linear-gradient(135deg, hsl(var(--polines-blue-50)), hsl(var(--gold-50)));
   }
 
   .dept-card:hover::before {
     @apply opacity-100;
   }
 
-  /* Stats Counter Animation */
+  /* ========================================
+     STATS & NUMBERS
+     ======================================== */
+  
   .stat-number {
     @apply text-5xl md:text-6xl font-bold;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--gold-light)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+  
+  .stat-label {
+    @apply text-sm font-medium text-muted-foreground uppercase tracking-wider mt-2;
+  }
 
-  /* News Card */
+  /* ========================================
+     NEWS & CONTENT CARDS
+     ======================================== */
+  
   .news-card {
-    @apply relative overflow-hidden rounded-xl bg-card transition-all duration-300;
-    @apply hover:shadow-xl hover:-translate-y-1;
+    @apply relative overflow-hidden rounded-xl bg-card border border-border/30;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .news-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    @apply border-primary/20;
   }
 
   .news-card-image {
-    @apply w-full h-48 object-cover transition-transform duration-500;
-    @apply group-hover:scale-110;
+    @apply w-full h-52 object-cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Mega Menu */
+  .news-card:hover .news-card-image {
+    transform: scale(1.05);
+  }
+
+  /* ========================================
+     NAVIGATION COMPONENTS
+     ======================================== */
+  
   .mega-menu {
-    @apply absolute left-0 right-0 top-full bg-white/95 backdrop-blur-xl;
-    @apply border-t border-border shadow-2xl opacity-0 invisible;
-    @apply transition-all duration-300 translate-y-2;
+    @apply absolute left-0 right-0 top-full bg-white/98 dark:bg-card/98 backdrop-blur-xl;
+    @apply border-t border-border/50 opacity-0 invisible;
+    box-shadow: var(--shadow-xl);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(8px);
   }
 
   .mega-menu.active {
-    @apply opacity-100 visible translate-y-0;
+    @apply opacity-100 visible;
+    transform: translateY(0);
+  }
+  
+  .nav-link {
+    @apply relative px-4 py-2 font-medium text-foreground/80 rounded-lg;
+    @apply transition-all duration-200;
+  }
+  
+  .nav-link:hover {
+    @apply text-primary bg-primary/5;
+  }
+  
+  .nav-link.active {
+    @apply text-primary bg-primary/10;
+  }
+  
+  .nav-link.active::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary rounded-full;
   }
 
-  /* CTA Button Styles */
+  /* ========================================
+     BUTTON ENHANCEMENTS
+     ======================================== */
+  
   .btn-primary-hero {
-    @apply px-8 py-4 rounded-full font-semibold text-lg;
-    @apply bg-gradient-to-r from-secondary to-[hsl(var(--gold-light))];
-    @apply shadow-lg;
-    @apply transition-all duration-300 hover:shadow-xl hover:scale-105;
-    @apply hover:from-[hsl(var(--gold-light))] hover:to-secondary;
-    color: hsl(var(--polines-blue-dark));
+    @apply px-8 py-4 rounded-full font-semibold text-base;
+    @apply bg-gradient-to-r from-secondary via-[hsl(var(--gold-light))] to-secondary;
+    @apply text-[hsl(var(--polines-blue-dark))];
+    box-shadow: var(--shadow-gold);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn-primary-hero:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 15px 50px -10px rgba(229, 168, 0, 0.5);
   }
 
   .btn-secondary-hero {
-    @apply px-8 py-4 rounded-full font-semibold text-lg;
-    @apply border-2 border-white/80 text-white bg-white/10;
-    @apply backdrop-blur-sm transition-all duration-300;
-    @apply hover:bg-white hover:text-primary;
+    @apply px-8 py-4 rounded-full font-semibold text-base;
+    @apply border-2 border-white/60 text-white bg-white/10;
+    @apply backdrop-blur-sm;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn-secondary-hero:hover {
+    @apply bg-white text-primary border-white;
+    transform: translateY(-2px);
   }
 
-  /* Trust Bar Logo */
-  .partner-logo {
-    @apply h-12 w-auto grayscale opacity-60 transition-all duration-300;
-    @apply hover:grayscale-0 hover:opacity-100;
-  }
-
-  /* Testimonial Card */
+  /* ========================================
+     TESTIMONIALS
+     ======================================== */
+  
   .testimonial-card {
-    @apply p-8 rounded-2xl bg-white shadow-lg border border-border/50;
-    @apply transition-all duration-300 hover:shadow-xl;
+    @apply p-8 rounded-2xl bg-card border border-border/30;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .testimonial-card:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px);
   }
 
-  /* Footer Link */
+  /* ========================================
+     FOOTER
+     ======================================== */
+  
   .footer-link {
-    @apply text-muted-foreground transition-colors duration-200;
-    @apply hover:text-secondary;
+    @apply text-white/70 transition-all duration-200;
+    @apply hover:text-secondary hover:translate-x-1;
   }
 
-  /* Sticky CTA Mobile */
+  /* ========================================
+     MOBILE CTA
+     ======================================== */
+  
   .sticky-cta {
     @apply fixed bottom-4 left-4 right-4 z-50 md:hidden;
-    @apply flex gap-2;
+    @apply flex gap-2 p-2 rounded-2xl;
+    @apply bg-white/90 dark:bg-card/90 backdrop-blur-xl border border-border/50;
+    box-shadow: var(--shadow-xl);
   }
 
   .sticky-cta button {
-    @apply flex-1 py-4 rounded-full font-semibold shadow-lg;
+    @apply flex-1 py-3.5 rounded-xl font-semibold;
+  }
+
+  /* ========================================
+     TRUST BAR
+     ======================================== */
+  
+  .partner-logo {
+    @apply h-10 w-auto grayscale opacity-50 transition-all duration-300;
+    @apply hover:grayscale-0 hover:opacity-100;
+  }
+
+  /* ========================================
+     BADGES & TAGS
+     ======================================== */
+  
+  .badge-primary {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+    @apply bg-primary/10 text-primary border border-primary/20;
+  }
+  
+  .badge-secondary {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+    @apply bg-secondary/10 text-secondary-foreground border border-secondary/30;
+  }
+  
+  .badge-success {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+    @apply bg-[hsl(var(--success))]/10 text-[hsl(var(--success))] border border-[hsl(var(--success))]/20;
+  }
+
+  /* ========================================
+     FORM ELEMENTS
+     ======================================== */
+  
+  .input-modern {
+    @apply w-full px-4 py-3 rounded-xl border border-border bg-background;
+    @apply text-foreground placeholder:text-muted-foreground;
+    @apply transition-all duration-200;
+    @apply focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none;
+  }
+  
+  .input-search {
+    @apply w-full pl-11 pr-4 py-3 rounded-full border border-border bg-background;
+    @apply text-foreground placeholder:text-muted-foreground;
+    @apply transition-all duration-200;
+    @apply focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none;
+  }
+
+  /* ========================================
+     DIVIDERS & SEPARATORS
+     ======================================== */
+  
+  .divider-gradient {
+    @apply h-px w-full;
+    background: linear-gradient(90deg, 
+      transparent, 
+      hsl(var(--border)), 
+      transparent
+    );
+  }
+  
+  .divider-gold {
+    @apply h-1 w-20 rounded-full;
+    background: linear-gradient(90deg, 
+      hsl(var(--secondary)), 
+      hsl(var(--gold-light))
+    );
   }
 }
 
 @layer utilities {
+  /* ========================================
+     ANIMATIONS
+     ======================================== */
+  
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -275,16 +644,24 @@
   .animate-counter {
     animation: counter 2s ease-out forwards;
   }
+  
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+  
+  .animate-pulse-subtle {
+    animation: pulseSoft 3s ease-in-out infinite;
+  }
 
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-15px); }
   }
 
   @keyframes fadeUp {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
@@ -293,25 +670,113 @@
   }
 
   @keyframes counter {
-    from { opacity: 0; transform: scale(0.5); }
+    from { opacity: 0; transform: scale(0.8); }
     to { opacity: 1; transform: scale(1); }
   }
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  @keyframes pulseSoft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
 
-  /* Scrollbar Styling */
+  /* ========================================
+     SCROLLBAR STYLING
+     ======================================== */
+  
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-muted;
+    @apply bg-muted/50 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-primary/30 rounded-full;
+    @apply bg-primary/20 rounded-full border-2 border-transparent;
+    background-clip: padding-box;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/50;
+    @apply bg-primary/40;
+  }
+
+  /* ========================================
+     SELECTION STYLING
+     ======================================== */
+  
+  ::selection {
+    @apply bg-primary/20 text-primary;
+  }
+
+  /* ========================================
+     UTILITY CLASSES
+     ======================================== */
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* ========================================
+     BACKDROP UTILITIES
+     ======================================== */
+  
+  .backdrop-blur-heavy {
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(24px) saturate(180%);
+  }
+
+  /* ========================================
+     ANIMATION DELAY UTILITIES
+     ======================================== */
+  
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  /* ========================================
+     GRADIENT TEXT UTILITIES
+     ======================================== */
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+  }
+
+  /* ========================================
+     RESPONSIVE SPACING HELPERS
+     ======================================== */
+  
+  .section-spacing {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  .section-spacing-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  .section-spacing-lg {
+    @apply py-20 md:py-28 lg:py-32;
   }
 }

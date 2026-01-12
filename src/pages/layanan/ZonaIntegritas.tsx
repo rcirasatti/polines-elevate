@@ -76,8 +76,6 @@ export default function ZonaIntegritas() {
         { label: "Layanan", href: "/layanan" },
         { label: "Zona Integritas" }
       ]}
-      sidebarTitle="Layanan"
-      sidebarLinks={sidebarLinks}
     >
       {/* Main Badge */}
       <motion.div

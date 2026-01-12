@@ -8,15 +8,14 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 // Akademik Pages
-import ProgramStudiNew from "./pages/akademik/ProgramStudiNew";
+import ProgramStudiRevised from "./pages/akademik/ProgramStudiRevised";
 import BeasiswaNew from "./pages/akademik/BeasiswaNew";
 import KegiatanKampus from "./pages/akademik/KegiatanKampus";
-import Perpustakaan from "./pages/akademik/Perpustakaan";
+import Perak from "./pages/akademik/Perak";
 import KalenderAkademik from "./pages/akademik/KalenderAkademik";
 import Pedoman from "./pages/akademik/Pedoman";
 
 // Profil Pages
-import Sejarah from "./pages/profil/Sejarah";
 import TentangPolines from "./pages/profil/TentangPolines";
 import StrukturOrganisasi from "./pages/profil/StrukturOrganisasi";
 import RencanaStrategis from "./pages/profil/RencanaStrategis";
@@ -27,12 +26,16 @@ import PetaKampus from "./pages/profil/PetaKampus";
 import StaffDosen from "./pages/profil/StaffDosen";
 
 // Kerjasama Pages
+import KerjasamaIndex from "./pages/kerjasama/Index";
 import Internasional from "./pages/kerjasama/Internasional";
 import Nasional from "./pages/kerjasama/Nasional";
 
 // Riset Pages
 import RisetPublikasi from "./pages/riset/RisetPublikasi";
 import PengabdianMasyarakat from "./pages/riset/PengabdianMasyarakat";
+import HakiPaten from "./pages/riset/HakiPaten";
+import JurnalSipmas from "./pages/riset/JurnalSipmas";
+import ProdukInovasi from "./pages/riset/ProdukInovasi";
 
 // Kemahasiswaan Pages
 import KemahasiswaanIndex from "./pages/kemahasiswaan/Index";
@@ -71,7 +74,6 @@ const App = () => (
             
             {/* Profil Routes */}
             <Route path="/profil/tentang" element={<TentangPolines />} />
-            <Route path="/profil/sejarah" element={<Sejarah />} />
             <Route path="/profil/struktur-organisasi" element={<StrukturOrganisasi />} />
             <Route path="/profil/staff-dosen" element={<StaffDosen />} />
             <Route path="/profil/rencana-strategis" element={<RencanaStrategis />} />
@@ -81,17 +83,21 @@ const App = () => (
             <Route path="/profil/peta-kampus" element={<PetaKampus />} />
 
             {/* Akademik Routes */}
-            <Route path="/akademik" element={<ProgramStudiNew />} />
-            <Route path="/akademik/program-studi" element={<ProgramStudiNew />} />
+            <Route path="/akademik" element={<ProgramStudiRevised />} />
+            <Route path="/akademik/program-studi" element={<ProgramStudiRevised />} />
             <Route path="/akademik/beasiswa" element={<BeasiswaNew />} />
             <Route path="/akademik/kegiatan" element={<KegiatanKampus />} />
-            <Route path="/akademik/perpustakaan" element={<Perpustakaan />} />
+            <Route path="/akademik/perak" element={<Perak />} />
             <Route path="/akademik/kalender" element={<KalenderAkademik />} />
             <Route path="/akademik/pedoman" element={<Pedoman />} />
 
             {/* Riset Routes */}
+            <Route path="/riset" element={<RisetPublikasi />} />
             <Route path="/riset/publikasi" element={<RisetPublikasi />} />
             <Route path="/riset/pengabdian" element={<PengabdianMasyarakat />} />
+            <Route path="/riset/haki" element={<HakiPaten />} />
+            <Route path="/riset/jurnal" element={<JurnalSipmas />} />
+            <Route path="/riset/produk" element={<ProdukInovasi />} />
 
             {/* Kemahasiswaan Routes */}
             <Route path="/kemahasiswaan" element={<KemahasiswaanIndex />} />
@@ -100,6 +106,7 @@ const App = () => (
             <Route path="/kemahasiswaan/prestasi" element={<GenericPage title="Prestasi Mahasiswa" breadcrumbs={[{ label: "Kemahasiswaan" }, { label: "Prestasi" }]} />} />
 
             {/* Kerjasama Routes */}
+            <Route path="/kerjasama" element={<KerjasamaIndex />} />
             <Route path="/kerjasama/internasional" element={<Internasional />} />
             <Route path="/kerjasama/nasional" element={<Nasional />} />
 

@@ -195,8 +195,6 @@ export default function LaporanKinerja() {
         { label: "Profil", href: "/profil/tentang" },
         { label: "Laporan Kinerja" },
       ]}
-      sidebarTitle="Menu Profil"
-      sidebarLinks={sidebarLinks}
     >
       {/* Performance Stats */}
       <section className="mb-10">

@@ -136,8 +136,6 @@ export default function RencanaStrategis() {
         { label: "Profil", href: "/profil/tentang" },
         { label: "Rencana Strategis" },
       ]}
-      sidebarTitle="Menu Profil"
-      sidebarLinks={sidebarLinks}
     >
       {/* Executive Summary */}
       <section className="mb-12">

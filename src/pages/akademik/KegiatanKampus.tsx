@@ -148,8 +148,6 @@ export default function KegiatanKampus() {
         { label: "Akademik", href: "/akademik" },
         { label: "Kegiatan Kampus" },
       ]}
-      sidebarTitle="Menu Akademik"
-      sidebarLinks={sidebarLinks}
     >
       <div className="space-y-8">
         {/* Featured Events Slider */}
