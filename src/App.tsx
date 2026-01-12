@@ -62,13 +62,16 @@ import { GenericPage } from "./components/layout/GenericPage";
 
 const queryClient = new QueryClient();
 
+// Get basename from Vite config
+const basename = import.meta.env.BASE_URL;
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename={basename}>
           <Routes>
             <Route path="/" element={<Index />} />
             
