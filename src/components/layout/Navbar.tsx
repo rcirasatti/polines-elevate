@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   Menu, X, Search, ChevronDown, ExternalLink,
   GraduationCap, Building2, FlaskConical, Users, Briefcase,
-  BookOpen, Award, Globe, Mail, Moon, Sun
+  BookOpen, Award, Globe, Mail, Moon, Sun, Headphones, Download
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
@@ -17,6 +17,7 @@ const menuItems = [
       { title: "Tentang Polines", href: "/profil/tentang" },
       { title: "Sejarah", href: "/profil/sejarah" },
       { title: "Struktur Organisasi", href: "/profil/struktur-organisasi" },
+      { title: "Staff & Dosen", href: "/profil/staff-dosen" },
       { title: "Rencana Strategis", href: "/profil/rencana-strategis" },
       { title: "Laporan Kinerja", href: "/profil/laporan-kinerja" },
       { title: "Fasilitas Kampus", href: "/profil/fasilitas" },
@@ -33,7 +34,6 @@ const menuItems = [
       { title: "Kegiatan Kampus", href: "/akademik/kegiatan" },
       { title: "Perpustakaan (PERAK)", href: "/akademik/perpustakaan" },
       { title: "Kalender Akademik", href: "/akademik/kalender" },
-      { title: "Akreditasi", href: "/akademik/akreditasi" },
       { title: "Pedoman Akademik", href: "/akademik/pedoman" },
     ],
   },
@@ -41,21 +41,19 @@ const menuItems = [
     title: "Riset & Inovasi",
     icon: FlaskConical,
     submenu: [
+      { title: "P3M", href: "https://p3m.polines.ac.id", external: true },
       { title: "Riset & Publikasi", href: "/riset/publikasi" },
       { title: "Pengabdian Masyarakat", href: "/riset/pengabdian" },
-      { title: "HAKI & Paten", href: "/riset/haki" },
-      { title: "Jurnal SIPMAS", href: "/riset/jurnal" },
-      { title: "Produk Inovasi", href: "/riset/produk" },
     ],
   },
   {
     title: "Kemahasiswaan",
     icon: Users,
     submenu: [
+      { title: "Pusat Layanan", href: "/kemahasiswaan" },
       { title: "Organisasi Mahasiswa", href: "/kemahasiswaan/ormawa" },
       { title: "Unit Kegiatan Mahasiswa", href: "/kemahasiswaan/ukm" },
       { title: "Prestasi Mahasiswa", href: "/kemahasiswaan/prestasi" },
-      { title: "Layanan Mahasiswa", href: "/kemahasiswaan/layanan" },
     ],
   },
   {
@@ -64,19 +62,30 @@ const menuItems = [
     submenu: [
       { title: "Kerjasama Internasional", href: "/kerjasama/internasional" },
       { title: "Kerjasama Nasional", href: "/kerjasama/nasional" },
-      { title: "Career Development Center", href: "/kerjasama/cdc" },
-      { title: "Tracer Study", href: "/kerjasama/tracer-study" },
-      { title: "Ikatan Alumni", href: "/kerjasama/alumni" },
+    ],
+  },
+  {
+    title: "Layanan",
+    icon: Headphones,
+    submenu: [
+      { title: "Semua Layanan", href: "/layanan" },
+      { title: "Zona Integritas", href: "/layanan/zona-integritas" },
+      { title: "Whistleblowing System", href: "/layanan/wbs" },
+      { title: "Unit Layanan Terpadu", href: "/layanan/ult" },
+      { title: "Informasi Publik (PPID)", href: "/layanan/ppid" },
+      { title: "Layanan Sistem Informasi", href: "/layanan/sistem-informasi" },
+      { title: "MikroTik Academy", href: "/layanan/mikrotik" },
+      { title: "Verifikasi Ijazah", href: "/layanan/verifikasi-ijazah" },
     ],
   },
 ];
 
 const utilityLinks = [
-  { title: "SIAKAD", href: "https://siakad.polines.ac.id", external: true },
-  { title: "LMS", href: "https://lms.polines.ac.id", external: true },
+  { title: "SSO", href: "https://sso.polines.ac.id", external: true },
+  { title: "El-Nino", href: "https://elnino.polines.ac.id", external: true },
   { title: "Webmail", href: "https://mail.polines.ac.id", external: true },
-  { title: "Perpustakaan", href: "https://lib.polines.ac.id", external: true },
-  { title: "PPID", href: "/layanan/ppid" },
+  { title: "Download", href: "/download" },
+  { title: "Akreditasi", href: "/akreditasi" },
 ];
 
 export function Navbar() {
@@ -187,7 +196,6 @@ export function Navbar() {
                     <ChevronDown className={`w-4 h-4 transition-transform ${activeMenu === item.title ? 'rotate-180' : ''}`} />
                   </button>
                   
-                  {/* Mega Menu Dropdown */}
                   <AnimatePresence>
                     {activeMenu === item.title && (
                       <motion.div
@@ -205,12 +213,24 @@ export function Navbar() {
                           <ul className="space-y-1">
                             {item.submenu.map((subitem) => (
                               <li key={subitem.title}>
-                                <Link
-                                  to={subitem.href}
-                                  className="block px-3 py-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"
-                                >
-                                  {subitem.title}
-                                </Link>
+                                {'external' in subitem && subitem.external ? (
+                                  <a
+                                    href={subitem.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"
+                                  >
+                                    {subitem.title}
+                                    <ExternalLink className="w-3 h-3" />
+                                  </a>
+                                ) : (
+                                  <Link
+                                    to={subitem.href}
+                                    className="block px-3 py-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"
+                                  >
+                                    {subitem.title}
+                                  </Link>
+                                )}
                               </li>
                             ))}
                           </ul>
@@ -224,7 +244,6 @@ export function Navbar() {
 
             {/* Right Actions */}
             <div className="flex items-center gap-2">
-              {/* Dark Mode Toggle */}
               {mounted && (
                 <button
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -239,7 +258,6 @@ export function Navbar() {
                 </button>
               )}
 
-              {/* Search Button */}
               <button
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
                 className="p-2 rounded-full hover:bg-muted transition-colors"
@@ -247,7 +265,6 @@ export function Navbar() {
                 <Search className="w-5 h-5 text-muted-foreground" />
               </button>
 
-              {/* CTA Button */}
               <Button asChild variant="gold" className="hidden sm:flex">
                 <Link to="/penerimaan">
                   <Award className="w-4 h-4 mr-1" />
@@ -255,7 +272,6 @@ export function Navbar() {
                 </Link>
               </Button>
 
-              {/* Mobile Menu Toggle */}
               <button
                 className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -308,13 +324,26 @@ export function Navbar() {
                     </div>
                     <div className="ml-7 space-y-1">
                       {item.submenu.map((subitem) => (
-                        <Link
-                          key={subitem.title}
-                          to={subitem.href}
-                          className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors"
-                        >
-                          {subitem.title}
-                        </Link>
+                        'external' in subitem && subitem.external ? (
+                          <a
+                            key={subitem.title}
+                            href={subitem.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-3 py-2 text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            {subitem.title}
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        ) : (
+                          <Link
+                            key={subitem.title}
+                            to={subitem.href}
+                            className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            {subitem.title}
+                          </Link>
+                        )
                       ))}
                     </div>
                   </div>
