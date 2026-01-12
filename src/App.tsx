@@ -13,11 +13,9 @@ import BeasiswaNew from "./pages/akademik/BeasiswaNew";
 import KegiatanKampus from "./pages/akademik/KegiatanKampus";
 import Perpustakaan from "./pages/akademik/Perpustakaan";
 import KalenderAkademik from "./pages/akademik/KalenderAkademik";
-import Akreditasi from "./pages/akademik/Akreditasi";
 import Pedoman from "./pages/akademik/Pedoman";
 
 // Profil Pages
-import Fasilitas from "./pages/profil/Fasilitas";
 import Sejarah from "./pages/profil/Sejarah";
 import TentangPolines from "./pages/profil/TentangPolines";
 import StrukturOrganisasi from "./pages/profil/StrukturOrganisasi";
@@ -26,18 +24,32 @@ import LaporanKinerja from "./pages/profil/LaporanKinerja";
 import FasilitasNew from "./pages/profil/FasilitasNew";
 import SumberDaya from "./pages/profil/SumberDaya";
 import PetaKampus from "./pages/profil/PetaKampus";
+import StaffDosen from "./pages/profil/StaffDosen";
 
 // Kerjasama Pages
-import Kerjasama from "./pages/kerjasama/Index";
 import Internasional from "./pages/kerjasama/Internasional";
 import Nasional from "./pages/kerjasama/Nasional";
 
 // Riset Pages
 import RisetPublikasi from "./pages/riset/RisetPublikasi";
 import PengabdianMasyarakat from "./pages/riset/PengabdianMasyarakat";
-import HakiPaten from "./pages/riset/HakiPaten";
-import JurnalSipmas from "./pages/riset/JurnalSipmas";
-import ProdukInovasi from "./pages/riset/ProdukInovasi";
+
+// Kemahasiswaan Pages
+import KemahasiswaanIndex from "./pages/kemahasiswaan/Index";
+
+// Layanan Pages
+import LayananIndex from "./pages/layanan/Index";
+import ZonaIntegritas from "./pages/layanan/ZonaIntegritas";
+import WBS from "./pages/layanan/WBS";
+import ULT from "./pages/layanan/ULT";
+import PPID from "./pages/layanan/PPID";
+import SistemInformasi from "./pages/layanan/SistemInformasi";
+import MikroTik from "./pages/layanan/MikroTik";
+import VerifikasiIjazah from "./pages/layanan/VerifikasiIjazah";
+import Survei from "./pages/layanan/Survei";
+
+// Akreditasi
+import AkreditasiTopbar from "./pages/AkreditasiTopbar";
 
 // Penerimaan Pages
 import Penerimaan from "./pages/penerimaan/Index";
@@ -61,6 +73,7 @@ const App = () => (
             <Route path="/profil/tentang" element={<TentangPolines />} />
             <Route path="/profil/sejarah" element={<Sejarah />} />
             <Route path="/profil/struktur-organisasi" element={<StrukturOrganisasi />} />
+            <Route path="/profil/staff-dosen" element={<StaffDosen />} />
             <Route path="/profil/rencana-strategis" element={<RencanaStrategis />} />
             <Route path="/profil/laporan-kinerja" element={<LaporanKinerja />} />
             <Route path="/profil/fasilitas" element={<FasilitasNew />} />
@@ -74,46 +87,47 @@ const App = () => (
             <Route path="/akademik/kegiatan" element={<KegiatanKampus />} />
             <Route path="/akademik/perpustakaan" element={<Perpustakaan />} />
             <Route path="/akademik/kalender" element={<KalenderAkademik />} />
-            <Route path="/akademik/akreditasi" element={<Akreditasi />} />
             <Route path="/akademik/pedoman" element={<Pedoman />} />
 
             {/* Riset Routes */}
             <Route path="/riset/publikasi" element={<RisetPublikasi />} />
             <Route path="/riset/pengabdian" element={<PengabdianMasyarakat />} />
-            <Route path="/riset/haki" element={<HakiPaten />} />
-            <Route path="/riset/jurnal" element={<JurnalSipmas />} />
-            <Route path="/riset/produk" element={<ProdukInovasi />} />
 
             {/* Kemahasiswaan Routes */}
+            <Route path="/kemahasiswaan" element={<KemahasiswaanIndex />} />
             <Route path="/kemahasiswaan/ormawa" element={<GenericPage title="Organisasi Mahasiswa" breadcrumbs={[{ label: "Kemahasiswaan" }, { label: "Ormawa" }]} />} />
             <Route path="/kemahasiswaan/ukm" element={<GenericPage title="Unit Kegiatan Mahasiswa" breadcrumbs={[{ label: "Kemahasiswaan" }, { label: "UKM" }]} />} />
             <Route path="/kemahasiswaan/prestasi" element={<GenericPage title="Prestasi Mahasiswa" breadcrumbs={[{ label: "Kemahasiswaan" }, { label: "Prestasi" }]} />} />
-            <Route path="/kemahasiswaan/layanan" element={<GenericPage title="Layanan Mahasiswa" breadcrumbs={[{ label: "Kemahasiswaan" }, { label: "Layanan" }]} />} />
 
             {/* Kerjasama Routes */}
-            <Route path="/kerjasama" element={<Kerjasama />} />
             <Route path="/kerjasama/internasional" element={<Internasional />} />
             <Route path="/kerjasama/nasional" element={<Nasional />} />
-            <Route path="/kerjasama/cdc" element={<GenericPage title="Career Development Center" breadcrumbs={[{ label: "Kerjasama", href: "/kerjasama" }, { label: "CDC" }]} />} />
-            <Route path="/kerjasama/tracer-study" element={<GenericPage title="Tracer Study" breadcrumbs={[{ label: "Kerjasama", href: "/kerjasama" }, { label: "Tracer Study" }]} />} />
-            <Route path="/kerjasama/alumni" element={<GenericPage title="Ikatan Alumni" breadcrumbs={[{ label: "Kerjasama", href: "/kerjasama" }, { label: "Ikatan Alumni" }]} />} />
+
+            {/* Layanan Routes */}
+            <Route path="/layanan" element={<LayananIndex />} />
+            <Route path="/layanan/zona-integritas" element={<ZonaIntegritas />} />
+            <Route path="/layanan/wbs" element={<WBS />} />
+            <Route path="/layanan/ult" element={<ULT />} />
+            <Route path="/layanan/ppid" element={<PPID />} />
+            <Route path="/layanan/sistem-informasi" element={<SistemInformasi />} />
+            <Route path="/layanan/mikrotik" element={<MikroTik />} />
+            <Route path="/layanan/verifikasi-ijazah" element={<VerifikasiIjazah />} />
+            <Route path="/layanan/survei" element={<Survei />} />
+
+            {/* Akreditasi (Topbar) */}
+            <Route path="/akreditasi" element={<AkreditasiTopbar />} />
 
             {/* Penerimaan Routes */}
             <Route path="/penerimaan" element={<Penerimaan />} />
-            <Route path="/penerimaan/jalur" element={<GenericPage title="Jalur Masuk" breadcrumbs={[{ label: "Penerimaan", href: "/penerimaan" }, { label: "Jalur Masuk" }]} />} />
-            <Route path="/penerimaan/biaya" element={<GenericPage title="Biaya Kuliah" breadcrumbs={[{ label: "Penerimaan", href: "/penerimaan" }, { label: "Biaya Kuliah" }]} />} />
-            <Route path="/penerimaan/panduan" element={<GenericPage title="Panduan Pendaftaran" breadcrumbs={[{ label: "Penerimaan", href: "/penerimaan" }, { label: "Panduan" }]} />} />
-            <Route path="/penerimaan/faq" element={<GenericPage title="FAQ PMB" breadcrumbs={[{ label: "Penerimaan", href: "/penerimaan" }, { label: "FAQ" }]} />} />
 
-            {/* Layanan Routes */}
-            <Route path="/layanan/ppid" element={<GenericPage title="PPID" subtitle="Pejabat Pengelola Informasi dan Dokumentasi" breadcrumbs={[{ label: "Layanan" }, { label: "PPID" }]} />} />
+            {/* Download */}
+            <Route path="/download" element={<GenericPage title="Pusat Unduhan" breadcrumbs={[{ label: "Download" }]} />} />
 
             {/* Static Pages */}
             <Route path="/kebijakan-privasi" element={<GenericPage title="Kebijakan Privasi" breadcrumbs={[{ label: "Kebijakan Privasi" }]} />} />
             <Route path="/syarat-ketentuan" element={<GenericPage title="Syarat & Ketentuan" breadcrumbs={[{ label: "Syarat & Ketentuan" }]} />} />
             <Route path="/peta-situs" element={<GenericPage title="Peta Situs" breadcrumbs={[{ label: "Peta Situs" }]} />} />
 
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
